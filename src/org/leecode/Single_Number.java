@@ -1,8 +1,6 @@
 package org.leecode;
 
-import java.awt.List;
 import java.util.HashSet;
-import java.util.LinkedList;
 
 public class Single_Number {
 	public int singleNumber1(int[] nums) {
