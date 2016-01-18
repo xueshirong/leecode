@@ -14,7 +14,7 @@ package org.leecode;
 
 public class Maximum_depth_of_Binary_Tree {
 	
-	public int maxDepth(Maximum_depth_of_Binary_TreeNode root) {
+	public int maxDepth(TreeNode root) {
         if (root == null)
         	return 0;
         int numL = 1 + maxDepth(root.left);
