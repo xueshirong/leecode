@@ -2,12 +2,15 @@ package org.leecode;
 
 public class Reverse_Linked_List {
 	public ListNode reverseList(ListNode head) {
-        ListNode currNode = head;
-        while(currNode.next != null){
-        	ListNode tempNode = currNode;
-        	currNode = currNode.next;
-            currNode.next = tempNode;
+		ListNode curr = null;
+        ListNode temp = head;
+        ListNode prev = null;
+        while(temp != null){
+            prev = curr;
+            curr = temp;
+            temp = curr.next;
+            curr.next = prev;
         }
-        return currNode;
+        return curr;
     }
 }
