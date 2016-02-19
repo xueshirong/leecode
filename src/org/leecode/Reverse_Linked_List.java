@@ -13,4 +13,18 @@ public class Reverse_Linked_List {
         }
         return curr;
     }
+	
+	public ListNode reverseList1(ListNode head) {
+		
+        ListNode pre = null;
+        while(head != null){
+        	ListNode tem = head.next;
+        	head.next = pre;
+        	pre = head;
+        	head = tem;        	
+        }
+        
+        
+        return pre;
+    }
 }
