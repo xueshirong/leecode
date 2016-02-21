@@ -27,19 +27,4 @@ public class Reverse_Linked_ListTest {
 			newHead = newHead.next;
 		}
 	}
-
-	@Test
-	public void testReverseList1() {
-		ListNode head = Utility.getTestListNode();
-		/*while(head != null){
-			System.out.println(head.val);
-			head = head.next;
-		}*/
-		ListNode newHead = rll.reverseList1(head);
-		while(newHead != null){
-			System.out.println(newHead.val);
-			newHead = newHead.next;
-		}
-	}
-
 }
