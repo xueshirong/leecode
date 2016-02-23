@@ -1,5 +1,7 @@
 package org.leecode;
 
+import org.leecode.Common.ListNode;
+
 public class Reverse_Linked_List {
 	public ListNode reverseList(ListNode head) {
 		ListNode pre = null;

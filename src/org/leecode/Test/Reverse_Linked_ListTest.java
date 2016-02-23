@@ -4,8 +4,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.leecode.ListNode;
 import org.leecode.Reverse_Linked_List;
+import org.leecode.Common.ListNode;
 import org.leecode.Common.Utility;
 
 public class Reverse_Linked_ListTest {

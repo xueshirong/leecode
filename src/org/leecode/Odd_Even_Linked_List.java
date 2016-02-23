@@ -1,5 +1,7 @@
 package org.leecode;
 
+import org.leecode.Common.ListNode;
+
 public class Odd_Even_Linked_List {
 	public ListNode oddEvenList(ListNode head) {
         if (head == null || head.next == null)
