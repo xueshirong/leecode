@@ -5,7 +5,7 @@ public class Utility {
 		ListNode A = new ListNode(1);
 		ListNode B = new ListNode(2);
 		ListNode C = new ListNode(3);
-		ListNode D = new ListNode(4);
+		/*ListNode D = new ListNode(4);*/
 		/*ListNode E = new ListNode(5);
 		ListNode F = new ListNode(6);
 		ListNode G = new ListNode(7);
@@ -13,7 +13,7 @@ public class Utility {
 		
 		A.next = B;
 		B.next = C;
-		C.next = D;
+		/*C.next = D;*/
 		/*D.next = E;
 		E.next = F;
 		F.next = G;
