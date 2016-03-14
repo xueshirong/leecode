@@ -1,5 +1,7 @@
 package org.leecode.Common;
 
+import java.util.Scanner;
+
 public class Utility {
 	public static ListNode getTestListNode(){
 		ListNode A = new ListNode(1);
@@ -10,10 +12,11 @@ public class Utility {
 		ListNode F = new ListNode(6);
 		ListNode G = new ListNode(7);
 		ListNode H = new ListNode(8);*/
+		Scanner scanner = new Scanner(System.in);
 		
 		A.next = B;
 		B.next = C;
-		/*C.next = D;*/
+		//C.next = D;*/
 		/*D.next = E;
 		E.next = F;
 		F.next = G;
