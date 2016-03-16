@@ -1,9 +1,10 @@
-package org.leecode;
+package org.leecode.Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Remove_Duplicates_from_Sorted_ListII;
 import org.leecode.Common.ListNode;
 import org.leecode.Common.Utility;
 
