@@ -7,11 +7,12 @@ public class Move_Zeroes {
         	if (nums[i] != 0){
             	Integer tem = nums[i];
             	nums[i] = nums[j];
-            	nums[j] = tem;            	
+            	nums[j] = tem;
                 j++;
-                
             }
         }
+        
+        
         return nums;
 	}
 }
