@@ -39,16 +39,12 @@ public class Reorder_List {
     }
     //find middle node in a list
     public ListNode findMidNode(ListNode head){
-        if(head == null || head.next == null)
-            return head;
         ListNode slow = head;
         ListNode fast = head;
         while(fast.next != null && fast.next.next != null){//slow is the middle node
             fast = fast.next.next;
             slow = slow.next;
         }
-        if (fast.next != null && fast.next.next == null) //fast is the tail node
-            fast = fast.next;
         return slow;
     }
 }
