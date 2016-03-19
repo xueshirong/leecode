@@ -8,7 +8,7 @@ public class Move_Zeroes {
             	Integer tem = nums[i];
             	nums[i] = nums[j];
             	nums[j] = tem;
-                j++;
+                
             }
         }
         
