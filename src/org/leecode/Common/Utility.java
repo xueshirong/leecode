@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Utility {
 	public static ListNode getTestListNode(){
-		ListNode A = new ListNode(1);
-		ListNode B = new ListNode(1);
-		ListNode C = new ListNode(2);
-		/*ListNode D = new ListNode(3);
-		ListNode E = new ListNode(4);
+		ListNode A = new ListNode(2);
+		ListNode B = new ListNode(5);
+		ListNode C = new ListNode(4);
+		ListNode D = new ListNode(6);
+		ListNode E = new ListNode(1);
 		ListNode F = new ListNode(3);
-		ListNode G = new ListNode(2);
+		/*ListNode G = new ListNode(2);
 		ListNode H = new ListNode(1);*/
 		
 		
 		A.next = B;
 		B.next = C;
-		/*C.next = D;
+		C.next = D;
 		D.next = E;
 		E.next = F;
-		F.next = G;
+		/*F.next = G;
 		G.next = H;*/
 		return A;
 	}
