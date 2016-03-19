@@ -11,7 +11,6 @@ public class Move_Zeroes2 {
                 j++;
             }
         }
-         
         return nums;
 	}
 }
