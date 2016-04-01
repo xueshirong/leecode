@@ -1,24 +1,27 @@
 package org.leecode;
 
+import java.util.ArrayList;
+
 import org.leecode.Common.ListNode;
 
 public class Palindrome_Linked_List {
-	public boolean isPalindrome(ListNode head) {
-        StringBuffer sb = new StringBuffer();
+public boolean isPalindrome(ListNode head) {
+        
+        ArrayList<Integer> al = new ArrayList<Integer>();
         while(head != null){
-            sb.append(head.val);
+            al.add(head.val);
             head = head.next;
         }
-        if (sb.equals(""))
+        if (al.size() == 0)
             return false;
-        int half = sb.length()/2;
-        if (sb.length()%2 == 1)
-            half = sb.length()/2 + 1;
+        int half = al.size()/2;
+        if (al.size()%2 == 1)
+            half = al.size()/2 + 1;
         
         for(int i = 0; i< half; i++){
-            if (sb.charAt(i) != sb.charAt(sb.length()  -1))
+            if (!al.get(i).equals(al.get(al.size() - 1 - i)))
                 return false;
         }
         return true;
-    }
+	}
 }

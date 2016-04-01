@@ -1,9 +1,10 @@
-package org.leecode;
+package org.leecode.Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Palindrome_Permutation;
 
 public class Palindrome_PermutationTest {
 	Palindrome_Permutation ng = new Palindrome_Permutation();

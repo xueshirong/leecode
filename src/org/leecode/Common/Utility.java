@@ -7,19 +7,19 @@ public class Utility {
 		ListNode A = new ListNode(1);
 		ListNode B = new ListNode(2);
 		ListNode C = new ListNode(3);
-		/*ListNode D = new ListNode(4);*/
-		/*ListNode E = new ListNode(5);
-		ListNode F = new ListNode(6);
-		ListNode G = new ListNode(7);
-		ListNode H = new ListNode(8);*/
-		Scanner scanner = new Scanner(System.in);
+		/*ListNode D = new ListNode(4);
+		ListNode E = new ListNode(5);
+		ListNode F = new ListNode(6);*/
+		/*ListNode G = new ListNode(2);
+		ListNode H = new ListNode(1);*/
+		
 		
 		A.next = B;
 		B.next = C;
-		//C.next = D;*/
-		/*D.next = E;
-		E.next = F;
-		F.next = G;
+		/*C.next = D;
+		D.next = E;
+		E.next = F;*/
+		/*F.next = G;
 		G.next = H;*/
 		return A;
 	}
@@ -50,16 +50,16 @@ public class Utility {
 		ListNode A = new ListNode(1);
 		ListNode B = new ListNode(1);
 		ListNode C = new ListNode(2);
-		/*ListNode D = new ListNode(4);
-		ListNode E = new ListNode(5);
+		ListNode D = new ListNode(4);
+		/*ListNode E = new ListNode(5);
 		ListNode F = new ListNode(6);
 		ListNode G = new ListNode(7);
 		ListNode H = new ListNode(8);*/
 		
 		A.next = B;
 		B.next = C;
-		/*C.next = D;
-		D.next = E;
+		C.next = D;
+		/*D.next = E;
 		E.next = F;
 		F.next = G;
 		G.next = H;*/

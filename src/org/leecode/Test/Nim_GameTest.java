@@ -1,9 +1,10 @@
-package org.leecode;
+package org.leecode.Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Nim_Game;
 
 public class Nim_GameTest {
 	Nim_Game ng = new Nim_Game();

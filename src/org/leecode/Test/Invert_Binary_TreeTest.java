@@ -1,7 +1,9 @@
-package org.leecode;
+package org.leecode.Test;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Invert_Binary_Tree;
+import org.leecode.TreeNode;
 
 public class Invert_Binary_TreeTest {
 

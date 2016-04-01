@@ -1,9 +1,10 @@
-package org.leecode;
+package org.leecode.Test;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Move_Zeroes;
 
 public class Move_Zeroes_Test {
 	Move_Zeroes mz = new Move_Zeroes();
