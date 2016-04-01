@@ -1,13 +1,13 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.leecode.Move_Zeroes;
+import org.leecode.Move_Zeroes2;
 
 public class Move_Zeroes_Test {
-	Move_Zeroes mz = new Move_Zeroes();
+	Move_Zeroes2 mz = new Move_Zeroes2();
 	@Before
 	public void setUp() throws Exception {
 	}
