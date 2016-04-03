@@ -18,20 +18,47 @@ public class Implement_strStr {
 	because in the method: String.substring(start, end), end is exclusive.
 	*/
 	public int strStr(String haystack, String needle) {
-		if (haystack == null || needle == null){
+		if (haystack == null || needle == null || haystack.length() < needle.length()){
             return -1;
         }
-        if (needle.equals(haystack)){
-            return 0;
-        }
+        StringBuffer sbTemp = new StringBuffer();
         int j = 0;
-        for (int i = needle.length(); i < haystack.length() + 1; i++){
-            String strTemp = haystack.substring(j, i);
-            if (needle.equals(strTemp)){
+        for (int i = 0; i < needle.length(); i++){
+            sbTemp.append(haystack.charAt(i));
+        }
+        
+        for (int i = needle.length() - 1; i < haystack.length(); i++){
+            if (sbTemp.toString().equals(needle)){
                 return j;
             }
-            else{
+            else if (i + 1 < haystack.length()){
+                sbTemp.deleteCharAt(0);
+                sbTemp.append(haystack.charAt(i + 1));
                 j++;
+            }
+        }
+        return -1;
+    }
+	
+	public int strStr2(String source, String target) {
+        if (source == null || target == null || source.length() < target.length()){
+            return -1;
+        }
+        
+        if (source.equals(target)){
+        	return 0;
+        }
+        
+        for(int i = 0; i <source.length(); i++){
+        	int j = 0;
+            for(j = 0; j <target.length(); j++){
+                if(target.charAt(j) != source.charAt(i + j)){
+                    break;
+                }
+            }
+            
+            if (j == target.length()){
+                return i;
             }
         }
         return -1;
