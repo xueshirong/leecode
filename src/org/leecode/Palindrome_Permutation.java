@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class Palindrome_Permutation {
 	public boolean canPermutePalindrome(String s) {
-		HashSet hs = new HashSet();
+		HashSet<Character> hs = new HashSet<Character>();
 		for(int i = 0; i < s.length(); i++){
 			if (hs.contains(s.charAt(i))){
 				hs.remove(s.charAt(i));
