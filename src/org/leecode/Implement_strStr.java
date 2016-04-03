@@ -18,7 +18,7 @@ public class Implement_strStr {
 	because in the method: String.substring(start, end), end is exclusive.
 	*/
 	public int strStr(String haystack, String needle) {
-		if (haystack == null || needle == null || haystack.length() < needle.length()){
+		if (haystack == null || needle == null){
             return -1;
         }
         if (needle.equals(haystack)){
