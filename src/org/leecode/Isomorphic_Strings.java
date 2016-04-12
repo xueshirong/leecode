@@ -1,11 +1,10 @@
 package org.leecode;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 
 public class Isomorphic_Strings {
 	public boolean isIsomorphic(String s, String t) {
-		HashMap<Character, Character> table = new HashMap<Character, Character>();
+		Hashtable<Character, Character> table = new Hashtable<Character, Character>();
         for (int i = 0; i < s.length(); i++){
             char cS = s.charAt(i);
             char cT = t.charAt(i);
