@@ -1,8 +1,6 @@
 package org.leecode;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 
 public class Contains_Duplicate_II {
 	public boolean containsNearbyDuplicate(int[] nums, int k) {
