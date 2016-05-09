@@ -1,7 +1,5 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.leecode.Majority_Element;

@@ -1,7 +1,5 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.leecode.Remove_Nth_Node_From_End_of_List;

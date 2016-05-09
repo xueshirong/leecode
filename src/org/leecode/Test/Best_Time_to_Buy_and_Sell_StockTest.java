@@ -1,7 +1,5 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.leecode.Best_Time_to_Buy_and_Sell_Stock;

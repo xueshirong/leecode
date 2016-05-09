@@ -14,8 +14,8 @@ public class Delete_Node_in_a_Linked_List_Test {
 	public void test() {
 		Delete_Node_in_a_Linked_List_ListNode node0 = new Delete_Node_in_a_Linked_List_ListNode(0);
 		Delete_Node_in_a_Linked_List_ListNode node1 = new Delete_Node_in_a_Linked_List_ListNode(1);
-		Delete_Node_in_a_Linked_List_ListNode node2 = new Delete_Node_in_a_Linked_List_ListNode(2);
-		Delete_Node_in_a_Linked_List_ListNode node3 = new Delete_Node_in_a_Linked_List_ListNode(3);
+		/*Delete_Node_in_a_Linked_List_ListNode node2 = new Delete_Node_in_a_Linked_List_ListNode(2);
+		Delete_Node_in_a_Linked_List_ListNode node3 = new Delete_Node_in_a_Linked_List_ListNode(3);*/
 		
 		node0.next = node1;
 		//node2.next = node3;

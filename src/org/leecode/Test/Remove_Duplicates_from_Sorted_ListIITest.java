@@ -1,7 +1,5 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.leecode.Remove_Duplicates_from_Sorted_ListII;
