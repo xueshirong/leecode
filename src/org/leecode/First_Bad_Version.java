@@ -10,7 +10,7 @@ public class First_Bad_Version {
                 end = mid;
                 
             }else{
-                start = mid + 1;
+                start = mid + 1; //*
             }
         }
         return start;
