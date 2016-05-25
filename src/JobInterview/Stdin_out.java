@@ -1,4 +1,4 @@
-package hackerrank;
+package JobInterview;
 
 import java.util.Scanner;
 
