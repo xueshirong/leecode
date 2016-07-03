@@ -1,6 +1,8 @@
 package hackerrank;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Simple_Array_Sum {
 	public static void main(String[] args) {
@@ -12,5 +14,6 @@ public class Simple_Array_Sum {
             sum = sum + scan.nextInt();
         }		
         System.out.println(sum);
+
     }
 }
