@@ -7,6 +7,7 @@ public class Guess_Number_Higher_or_Lower {
         while (low < high){
             int mid = low + (high - low)/2;
             switch(guess(mid)){
+            //switch(1){
                 case 0:
                     return mid;
                 case 1:
