@@ -11,12 +11,25 @@ public class Reverse_Integer {
         }
         int temp = 0;
         while (x > 0){
-            if (temp * 10> Integer.MAX_VALUE - x % 10)//check overflow
+            if (temp > (Integer.MAX_VALUE - x % 10)/10)//check overflow
                 return 0;
             temp = temp * 10 + x % 10;
             x = x/10;
         }
         
         return temp * sign;
+		
     }
+	public int reverse2(int x){
+		long tmp=0;
+        while(x != 0)
+        {
+            tmp *=10;
+            tmp += x%10;
+            if(tmp > Integer.MAX_VALUE || tmp < Integer.MIN_VALUE)
+                return 0;
+            x /= 10;
+        }
+        return (int)tmp;
+	}
 }
