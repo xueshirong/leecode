@@ -1,7 +1,5 @@
 package org.leecode.Test;
 
-import static org.junit.Assert.fail;
-
 import org.junit.Test;
 import org.leecode.Binary_Tree_Paths;
 import org.leecode.TreeNode;
