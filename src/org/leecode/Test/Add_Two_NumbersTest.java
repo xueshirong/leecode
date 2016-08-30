@@ -4,7 +4,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.leecode.Add_Two_Numbers;
 import org.leecode.Common.ListNode;
-import org.leecode.Common.Utility;
 
 public class Add_Two_NumbersTest {
 	Add_Two_Numbers atn = new Add_Two_Numbers();
@@ -14,9 +13,23 @@ public class Add_Two_NumbersTest {
 
 	@Test
 	public void testAddTwoNumbers() {
-		ListNode l1 = Utility.getTestListNode();
-		ListNode l2 = Utility.getTestListNode();
+		ListNode A = new ListNode(0);
+		ListNode B = new ListNode(7);
+		ListNode C = new ListNode(3);
+		//A.next = B;
+		//B.next = C;
+		
+		ListNode D = new ListNode(7);
+		ListNode E = new ListNode(3);
+		ListNode F = new ListNode(4);
+		D.next = E;
+		//E.next = F;
+		
+		ListNode l1 = A;
+		ListNode l2 = D;
 		atn.addTwoNumbers(l1, l2);
+		
+		atn.addTwoNumbers2(l1, l2);
 	}
 
 }
