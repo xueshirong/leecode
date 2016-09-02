@@ -1,6 +1,8 @@
 package org.leecode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Plus_One {
 	public int[] plusOne(int[] digits) {
@@ -15,5 +17,31 @@ public class Plus_One {
         Arrays.fill(results, 0);
         results[0] = 1;
         return results;
+    }
+	
+	//lower efficiency
+	public int[] plusOne1(int[] digits) {
+        List<Integer> res = new ArrayList<Integer>();
+        int carray = 0;
+        int len = digits.length - 1;
+        while(len > -1){
+            int sum = 0;
+            if (len == digits.length -1){
+                sum = digits[len] + 1;
+            }else{
+                sum = digits[len] + carray;
+            }
+            carray = sum / 10;
+            res.add(0, sum % 10);
+            len--;
+        }
+        if (carray != 0){
+            res.add(0, carray);
+        }
+        int[] ret = new int[res.size()];
+        for (int i = 0; i < res.size(); i++){
+        	ret[i] = res.get(i);
+        }
+        return ret;
     }
 }
