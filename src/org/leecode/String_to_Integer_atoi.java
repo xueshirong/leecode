@@ -41,4 +41,36 @@ public class String_to_Integer_atoi {
         }
         return sign * res;
 	}
+	
+	//09/03/2013
+	public int myAtoi2(String str) {
+		str = str.trim();//remove blank space
+        long res = 0;
+        int sign = 1;//use long to store result, then convert to int at the end
+        for (int i = 0; i < str.length(); i++){
+            if (i == 0 && str.charAt(i) == '-'){//check positive or negative
+                sign = -1;
+                continue;
+            }else if (i == 0 && str.charAt(i) == '+'){
+                continue;
+            }
+            
+            if (str.charAt(i) >= '0' && str.charAt(i) <= '9'){//check if digit
+                res = res * 10 + (str.charAt(i) - '0');
+                if (sign * res > Integer.MAX_VALUE){//check if outflow
+                    res = Integer.MAX_VALUE;
+                    return Integer.MAX_VALUE;
+                }
+                else if (sign * res < Integer.MIN_VALUE){
+                    res = Integer.MIN_VALUE;
+                    return Integer.MIN_VALUE;
+                }
+            }else{
+                break;
+            }
+        }
+        
+        res = sign * res;
+        return (int)res;
+    }
 }
