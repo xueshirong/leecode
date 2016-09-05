@@ -16,8 +16,11 @@ public class Palindrome_Linked_ListTest {
 
 	@Test
 	public void testIsPalindrome() {
+		ListNode A = new ListNode(1);
+		ListNode B = new ListNode(2);
+		A.next = B;
 		ListNode head = Utility.getTestListNode();
-		assertTrue(pll.isPalindrome(head));
+		assertTrue(pll.isPalindrome2(A));
 	}
 
 }
