@@ -49,24 +49,23 @@ public class Valid_Palindrome {
     }
 
     public boolean isPalindrome3(String s) {
-        if(s.equals(""))
+    	if(s.equals(""))
             return true;
+        s = s.toLowerCase();//Uppercase and lowercase shoule be considered
         int i = 0, j = s.length() - 1;
         while (i < j){
             char cl = s.charAt(i);
             char cr = s.charAt(j);
-            if (!Character.isLetterOrDigit(cl)){
+            if (!Character.isLetterOrDigit(cl))//isLetterOrDigit(), isDigit(), isLetter()
                 i++;
-                continue;
-            }
-            if (!Character.isLetterOrDigit(cr)){
+            else if (!Character.isLetterOrDigit(cr))
                 j--;
-                continue;
+            else if (cl != cr)
+	                return false;
+	        else{
+	            i++;
+	            j--;
             }
-            if (cl != cr)
-                return false;
-            i++;
-            j--;
         }
         return true;
     }
