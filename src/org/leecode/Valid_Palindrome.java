@@ -47,4 +47,27 @@ public class Valid_Palindrome {
             return true;
         else return false;
     }
+
+    public boolean isPalindrome3(String s) {
+        if(s.equals(""))
+            return true;
+        int i = 0, j = s.length() - 1;
+        while (i < j){
+            char cl = s.charAt(i);
+            char cr = s.charAt(j);
+            if (!Character.isLetterOrDigit(cl)){
+                i++;
+                continue;
+            }
+            if (!Character.isLetterOrDigit(cr)){
+                j--;
+                continue;
+            }
+            if (cl != cr)
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
 }
