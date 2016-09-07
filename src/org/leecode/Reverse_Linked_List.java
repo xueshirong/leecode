@@ -27,4 +27,15 @@ public class Reverse_Linked_List {
         }
         return pre;
     }
+	
+	 public ListNode reverseList3(ListNode head) {//recursively
+	        if (head == null || head.next == null)
+	            return head;
+	        ListNode nextNode = head.next;
+	        ListNode newHead = reverseList(nextNode);
+	        nextNode.next = head;
+	        head.next = null;
+	        
+	        return newHead;
+	    }
 }
