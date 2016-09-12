@@ -1,6 +1,7 @@
 package org.leecode;
 
 public class Integer_to_Roman {
+	//from Jiu Zhang
 	 public String intToRoman(int num) {
 	        //it is important to know all the special numer 1,4, 5, 9
 	        String[] symbol = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
