@@ -57,7 +57,7 @@ public class Roman_to_Integer {
         }
         return res;
     }
-    
+    //from Jiu Zhang
     public int romanToInt3(String s) {
     	Map<Character, Integer> map = new HashMap<Character, Integer>();
         map.put('I', 1);//1
