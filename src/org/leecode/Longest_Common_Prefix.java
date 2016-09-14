@@ -17,4 +17,24 @@ public class Longest_Common_Prefix {
         
         return res;
     }
+	
+	//From Jiu Zhang
+	public String longestCommonPrefix2(String[] strs) {
+		if (strs == null || strs.length == 0)
+            return "";
+        String res = strs[0];//take the first str as basic line
+        
+        for (int i = 1; i < strs.length; i++){//one by one to compare to bassic line, get common prefix
+            String curStr = strs[i];
+            if (curStr.equals(res))
+                continue;
+            int j = 0;
+            //get common prefix between strs[i] and res
+            while(j < curStr.length() && j < res.length() && res.charAt(j) == curStr.charAt(j)){
+                j++;
+            }
+            res = res.substring(0, j);
+        }
+        return res;
+    }
 }

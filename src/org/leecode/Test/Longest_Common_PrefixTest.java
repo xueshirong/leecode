@@ -12,8 +12,8 @@ public class Longest_Common_PrefixTest {
 
 	@Test
 	public void testLongestCommonPrefix() {
-		String[] strs = new String[]{"a","ab"};
-		lcp.longestCommonPrefix(strs);
+		String[] strs = new String[]{"abc","abd", "abm"};
+		lcp.longestCommonPrefix2(strs);
 	}
 
 }
