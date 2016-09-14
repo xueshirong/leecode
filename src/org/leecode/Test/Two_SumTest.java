@@ -20,7 +20,7 @@ public class Two_SumTest {
 	@Test
 	public void testTwoSum2() {
 		int[] nums = new int[]{3,2,4};
-		ts.twoSum2(nums, 6);
+		ts.twoSum3(nums, 6);
 	}
 
 }

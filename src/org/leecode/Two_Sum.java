@@ -31,4 +31,21 @@ public class Two_Sum {
         return result;
     }
 	
+	public int[] twoSum3(int[] nums, int target) {
+        if (nums.length < 2) return null;
+        int[] res = new int[2];
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++){
+            int temp = target - nums[i];
+            if (map.get(temp) == null)
+                map.put(nums[i], i);
+            else{
+                res[0] = i;
+                res[1] = map.get(temp);
+                return res;
+            }
+        }
+        return null;
+    }
+	
 }
