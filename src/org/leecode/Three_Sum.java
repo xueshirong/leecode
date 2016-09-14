@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 public class Three_Sum {
+	//From Jiu Zhang
 	public List<List<Integer>> threeSum(int[] nums) {
 		List<List<Integer>> res = new ArrayList<List<Integer>>();
         if (nums == null || nums.length < 3)
