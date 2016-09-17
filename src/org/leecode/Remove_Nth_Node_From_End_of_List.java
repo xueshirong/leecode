@@ -28,4 +28,24 @@ public class Remove_Nth_Node_From_End_of_List {
         slow = null;
         return head;
     }
+	//From Jiu Zhang
+	public ListNode removeNthFromEnd2(ListNode head, int n) {
+        if (n <= 0)
+            return null;
+        ListNode dump = new ListNode(0);
+        dump.next = head;
+        ListNode slow = dump;//use 2 fast/slow point
+        ListNode fast = dump;
+        for (int i = 0; i < n; i++){//the distance between 2 points is n
+            if (fast == null)
+                return null;
+            fast = fast.next;
+        }
+        while(fast.next != null){//fast is the last non-null node
+            fast = fast.next;
+            slow = slow.next;
+        }
+        slow.next = slow.next.next;//del nth node
+        return dump.next;
+    }
 }
