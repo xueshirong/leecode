@@ -24,4 +24,29 @@ public class Merge_Sorted_Array {
         	}
         }
 	}
+	//From Jiu Zhang
+	public void merge2(int[] nums1, int m, int[] nums2, int n) {
+        int index = m + n - 1;
+        int i = m - 1, j = n - 1;
+        while(i > -1 && j > -1){//from back to front, compare 2 values
+            if (nums1[i] > nums2[j]){//set bigger one to the end of nums1
+                nums1[index] =  nums1[i];
+                i--;
+            }else{
+                nums1[index] =  nums2[j];
+                j--;
+            }
+            index--;
+        }
+        while(i > -1){
+            nums1[index] =  nums1[i];
+            i--;
+            index--;
+        }
+         while(j > -1){
+            nums1[index] =  nums2[j];
+            j--;
+            index--;
+        }
+    }
 }
