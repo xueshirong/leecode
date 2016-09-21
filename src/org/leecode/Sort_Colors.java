@@ -6,7 +6,7 @@ public class Sort_Colors {
         if (nums == null || nums.length < 2)
             return;
         int l = 0;//left border of 1
-        int r = nums.length - 1;//right border of 2
+        int r = nums.length - 1;//right border of 1
         int i = 0;//current index;
         while(i <= r){//watch "="
             if (nums[i] == 0){
