@@ -15,4 +15,15 @@ public class Remove_Element {
         }
         return j;
     }
+	//refer to the 26 "Remove Duplicates from Sorted Array"
+	public int removeElement2(int[] nums, int val) {
+        int len = 0;
+        for (int i = 0; i < nums.length; i++){
+            if (nums[i] != val){
+                nums[len] = nums[i];
+                len++;
+            }
+        }
+        return len++;
+    }
 }
