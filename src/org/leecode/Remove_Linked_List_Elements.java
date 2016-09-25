@@ -21,4 +21,20 @@ public class Remove_Linked_List_Elements {
         }
         return newHead.next;
     }
+	
+	public ListNode removeElements2(ListNode head, int val) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode pre = dummy;
+        while(head != null){
+            if (head.val != val){
+                head = head.next;
+                pre = pre.next;
+            }else{//remove head
+                pre.next = head.next;
+                head = pre.next;
+            }
+        }
+        return dummy.next;
+    }
 }
