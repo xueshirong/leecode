@@ -9,7 +9,7 @@ public class Guess_Number_Higher_or_LowerTest {
 	Guess_Number_Higher_or_Lower p = new Guess_Number_Higher_or_Lower();
 	@Test
 	public void testGuessNumber() {
-		p.guessNumber(10);
+		p.guessNumber2(10);
 	}
 
 }
