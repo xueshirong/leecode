@@ -63,4 +63,42 @@ public class Implement_strStr {
         }
         return -1;
     }
+	//From Jiu Zhang
+	public int strStr3(String haystack, String needle) {
+        if (needle.length() > haystack.length())
+            return -1;
+        if (haystack.equals(needle))
+            return 0;
+        for(int i = 0; i < haystack.length() - needle.length() + 1; i++){
+            int k = 0;
+            for (k = 0; k < needle.length(); k++){
+                if (needle.charAt(k) != haystack.charAt(i + k))
+                    break;
+            }
+            if (k == needle.length())
+                return i;
+        }
+        return -1;
+    }
+	
+	//slide window
+    public int strStr4(String haystack, String needle) {
+        if (needle.length() > haystack.length())
+            return -1;
+        if (haystack.equals(needle))
+            return 0;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < needle.length(); i++){//add the first i node of harstack to builder
+            sb.append(haystack.charAt(i));
+        }
+        for (int i = needle.length() - 1; i < haystack.length(); i++){
+            if (sb.toString().equals(needle))
+                return i - needle.length() + 1;
+            else if (i + 1 < haystack.length()){//move i to i+1
+                sb.deleteCharAt(0);
+                sb.append(haystack.charAt(i + 1));//add i+1 char to builder
+            }
+        }
+        return -1;
+    }
 }
