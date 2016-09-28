@@ -7,6 +7,6 @@ public class Count_and_SayTest {
 	Count_and_Say p = new Count_and_Say();
 	@Test
 	public void testCountAndSay() {
-		p.countAndSay(4);
+		p.countAndSay2(3);
 	}
 }
