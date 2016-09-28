@@ -1,6 +1,7 @@
 package org.leecode;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Valid_Sudoku {
 	public boolean isValidSudoku(char[][] board) {
@@ -44,6 +45,44 @@ public class Valid_Sudoku {
                 }
             }
             
+        }
+        return true;
+    }
+
+	public boolean isValidSudoku2(char[][] board) {
+        if (checkRows(board) && checkCols(board) && checkBoxs(board))
+            return true;
+        return false;
+    }
+    private boolean checkBoxs(char[][] board){
+        for (int i= 0; i < 9; i+=3){
+            for (int j= 0; j < 9; j+=3){
+                Set<Character> set = new HashSet<Character>();
+                for(int k = 0; k < 9; k++){//key point
+                    if (board[i+k/3][j+k%3] != '.' && !set.add(board[i+k/3][j+k%3]))
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    private boolean checkRows(char[][] board){
+        for(int i = 0; i < board.length; i++){
+            Set<Character> set = new HashSet<Character>();
+            for(int j = 0; j < board[i].length; j++){
+                if (board[i][j] != '.' && !set.add(board[i][j]))
+                    return false;
+            }
+        }
+        return true;
+    }
+    private boolean checkCols(char[][] board){
+        for(int j = 0; j < board[0].length; j++){
+            Set<Character> set = new HashSet<Character>();
+            for(int i = 0; i < board.length; i++){
+                if (board[i][j] != '.' && !set.add(board[i][j]))
+                    return false;
+            }
         }
         return true;
     }
