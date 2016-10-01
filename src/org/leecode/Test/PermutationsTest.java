@@ -19,7 +19,7 @@ public class PermutationsTest {
 	@Test
 	public void testPermute2() {
 		int[] nums = new int[]{1,2,3};
-		p.permute2(nums);
+		p.permute3(nums);
 	}
 
 }
