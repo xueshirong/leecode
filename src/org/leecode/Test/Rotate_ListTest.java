@@ -15,7 +15,10 @@ public class Rotate_ListTest {
 	@Test
 	public void testRotateRight() {
 		ListNode head = Utility.getTestListNode();
-		rl.rotateRight(head, 2);
+		head = new ListNode(1);
+		ListNode a = new ListNode(2);
+		head.next = a;
+		rl.rotateRight2(head, 1);
 	}
 
 }

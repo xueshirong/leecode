@@ -25,4 +25,37 @@ public class Rotate_List {
         pre.next = null;
         return head;
     }
+	
+	//From Jiu Zhang
+	public ListNode rotateRight2(ListNode head, int k) {
+		if (head == null || head.next == null)
+            return head;
+        ListNode dummy = new ListNode(0);
+        ListNode pre = dummy;
+        dummy.next = head;
+        ListNode fast = pre;
+        ListNode slow = pre;
+        int length = 0;
+        while (fast.next != null){//get the length of list
+            fast = fast.next;
+            length++;
+        }
+        k = k % length;// if k > length, then recalculate k
+        if (k == 0)
+            return dummy.next;
+        fast = dummy;
+        while (k > 0){// move fast to kth node
+            fast = fast.next;
+            k--;
+        }
+        
+        while(fast != null && fast.next != null){//move slow to the kth from tail
+            slow = slow.next;
+            fast = fast.next;
+        }
+        fast.next = pre.next;
+        pre.next = slow.next;
+        slow.next = null;
+        return dummy.next;
+    }
 }
