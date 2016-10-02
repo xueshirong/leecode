@@ -12,7 +12,7 @@ public class String_to_Integer_atoiTest {
 
 	@Test
 	public void testMyAtoi() {
-		p.myAtoi2("9223372036854775809");
+		p.myAtoi3("-2147483647");
 	}
 
 }

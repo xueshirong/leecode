@@ -73,4 +73,34 @@ public class String_to_Integer_atoi {
         res = sign * res;
         return (int)res;
     }
+	
+	public int myAtoi3(String str) {
+        str = str.trim();
+        if (str.equals(""))
+            return 0;
+        long res = 0;
+        int i = 0;
+        int mark = 1;
+        
+        if (str.charAt(i) == '+')
+            i++;
+        else if (str.charAt(i) == '-'){
+            i++;
+            mark = -1;
+        }
+        
+        for (; i < str.length(); i++){
+            char c = str.charAt(i);
+            if (!Character.isDigit(c))
+                break;
+            res = res * 10 + (c - '0');
+            
+            if (mark * res > Integer.MAX_VALUE)
+                return Integer.MAX_VALUE;
+            
+            if (mark * res < Integer.MIN_VALUE)
+                return Integer.MIN_VALUE;
+        }
+        return (int)(mark * res);
+    }
 }
