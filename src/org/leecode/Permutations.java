@@ -59,7 +59,7 @@ public class Permutations {
 	    }
 	    private void helper3(List<List<Integer>> res, ArrayList<Integer> list, int[] nums){
 	        if (list.size() == nums.length){
-	            res.add(new ArrayList<Integer>(list));
+	            res.add(new ArrayList<Integer>(list));//must add the copy of list
 	            return;
 	        }
 	        for (int i = 0; i < nums.length; i++){
