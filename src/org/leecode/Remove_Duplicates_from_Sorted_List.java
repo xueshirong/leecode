@@ -21,4 +21,19 @@ public class Remove_Duplicates_from_Sorted_List {
         
         return head;
     }
+	
+	public ListNode deleteDuplicates2(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        while(head.next != null){
+            if (head.val != head.next.val)
+                head = head.next;
+            else{//del head.next
+                head.next = head.next.next;
+            }
+        }
+        return dummy.next;
+    }
 }

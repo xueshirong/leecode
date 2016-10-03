@@ -36,4 +36,21 @@ public class Remove_Duplicates_from_Sorted_ListII {
         }
         return empty.next;
     }
+	//From Jiu Zhang
+	public ListNode deleteDuplicates2(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode dummy = new ListNode(0);
+        ListNode pre = dummy;
+        dummy.next = head;
+        while (pre.next != null && pre.next.next != null){
+            if (pre.next.val == pre.next.next.val){
+                int val = pre.next.val;
+                while(pre.next != null && pre.next.val == val)
+                    pre.next = pre.next.next;
+            }else
+                pre = pre.next;
+        }
+        return dummy.next;
+    }
 }

@@ -7,7 +7,6 @@ public class Sort_ColorsTest {
 	Sort_Colors p = new Sort_Colors();
 	@Test
 	public void testSortColors() {
-		p.sortColors(new int[]{1,2,0});
+		p.sortColors2(new int[]{0,1,2,0,1,2});
 	}
-
 }
