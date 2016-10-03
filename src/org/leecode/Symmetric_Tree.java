@@ -43,4 +43,24 @@ public class Symmetric_Tree {
         
         return q1.isEmpty() && q2.isEmpty();
     }
+    //From Jiu Zhang
+    public boolean isSymmetric3(TreeNode root) {
+        if (root == null)
+            return true;
+        return check(root.left, root.right);
+        
+    }
+    private boolean check(TreeNode nl, TreeNode nr){
+        if (nl == null && nr == null)
+            return true;
+        if (nl == null || nr == null)
+            return false;
+        boolean left = false;
+        boolean right = false;
+        if(nl.val == nr.val){
+            left = check(nl.left, nr.right);
+            right = check(nl.right, nr.left);
+        }
+        return (left && right);
+    }
 }
