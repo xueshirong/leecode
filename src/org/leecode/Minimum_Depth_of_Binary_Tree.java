@@ -10,4 +10,21 @@ public class Minimum_Depth_of_Binary_Tree {
             return minDepth(root.left) + 1;
         return Math.min(minDepth(root.right), minDepth(root.left)) + 1;
     }
+	
+	//From Jiu Zhang
+	public int minDepth2(TreeNode root) {
+        if (root == null)
+            return 0;
+        return getDepth(root);        
+    }
+    
+    private int getDepth(TreeNode node){
+        if (node == null)
+            return Integer.MAX_VALUE;
+        if (node.left == null && node.right == null)
+            return 1;
+        int l = getDepth(node.left);
+        int r = getDepth(node.right);
+        return Math.min(l, r) + 1;
+    }
 }
