@@ -7,7 +7,7 @@ public class Valid_PalindromeTest {
 	Valid_Palindrome p = new Valid_Palindrome();
 	@Test
 	public void testIsPalindrome3() {
-		p.isPalindrome3("aa");
+		p.isPalindrome4("ab2a");
 	}
 
 }

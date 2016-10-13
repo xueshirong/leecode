@@ -69,4 +69,28 @@ public class Valid_Palindrome {
         }
         return true;
     }
+    
+    public boolean isPalindrome4(String s) {
+        if (s.trim() == "")
+            return true;
+        s = s.toLowerCase();
+        int i = 0, j = s.length() - 1;
+        while(i < j){
+            char ci = s.charAt(i);
+            char cj = s.charAt(j);
+            if (!(Character.isDigit(ci) || Character.isLetter(ci))){
+                i++;
+                continue;
+            }
+            if (!(Character.isDigit(cj) || Character.isLetter(cj))){
+                j--;
+                continue;
+            }
+            if (ci != cj)
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
 }
