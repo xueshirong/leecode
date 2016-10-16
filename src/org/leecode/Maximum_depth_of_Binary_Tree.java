@@ -24,4 +24,12 @@ public class Maximum_depth_of_Binary_Tree {
         
         return numR;
     }
+	//From Jiu Zhang
+	public int maxDepth2(TreeNode root) {
+        if (root == null)
+            return 0;
+        int l = maxDepth(root.left);
+        int r = maxDepth(root.right);
+        return Math.max(l, r) + 1;
+    }
 }
