@@ -28,4 +28,28 @@ public class Linked_List_Cycle_II {
         }
         return null;
     }
+	
+	public ListNode detectCycle2(ListNode head) {
+        if (head == null || head.next == null)
+            return null;
+        ListNode fast = head, slow = head;
+        boolean circle = false;
+        while(fast.next != null && fast.next.next != null){
+            fast = fast.next.next;
+            slow = slow.next;
+            if (fast == slow){
+                slow = head;
+                circle = true;
+                break;
+            }
+        }
+        if (!circle)
+            return null;
+        
+        while (circle && fast != slow){
+            fast = fast.next;
+            slow = slow.next;
+        }
+        return slow;
+    }
 }
