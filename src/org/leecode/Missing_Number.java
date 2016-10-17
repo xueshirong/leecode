@@ -10,4 +10,23 @@ public class Missing_Number {
         int mis = total - sum;
         return mis;
     }
+	
+	 //bitwise
+    public int missingNumber2(int[] nums) {
+        int res = 0;
+        for (int i = 0; i < nums.length; i++){
+            res ^= (i + 1) ^ nums[i];
+        }
+        return res;
+    }
+    
+    //arithmetic progression 
+    public int missingNumber3(int[] nums) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++){
+            sum += nums[i];
+        }
+        int newSum = nums.length * (nums.length + 1)/2;
+        return newSum - sum;
+    }
 }
