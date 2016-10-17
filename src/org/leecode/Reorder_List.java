@@ -13,7 +13,7 @@ public class Reorder_List {
         head = mergeList(head, rearHead);
     }
     //merge l2 to l1
-    public ListNode mergeList(ListNode l1, ListNode l2){
+    private ListNode mergeList(ListNode l1, ListNode l2){
         ListNode pre = new ListNode(0);
         pre.next = l1;
         ListNode temp = null;
@@ -27,7 +27,7 @@ public class Reorder_List {
         return pre.next;
     }
     //reverse a list
-    public ListNode reverseList(ListNode head){
+    private ListNode reverseList(ListNode head){
         ListNode pre = null;
         while(head != null){
             ListNode temp = head.next;
@@ -38,7 +38,7 @@ public class Reorder_List {
         return pre;
     }
     //find middle node in a list
-    public ListNode findMidNode(ListNode head){
+    private ListNode findMidNode(ListNode head){
         ListNode slow = head;
         ListNode fast = head;
         while(fast.next != null && fast.next.next != null){//slow is the middle node
@@ -46,5 +46,56 @@ public class Reorder_List {
             slow = slow.next;
         }
         return slow;
+    }
+    
+  //find rear part of list
+    //reverse rear part
+    //merge front and rear part
+    public void reorderList2(ListNode head) {
+        if (head == null || head.next == null)
+            return;
+        ListNode mid = findMiddleNode(head);
+        ListNode newHead = mid.next;
+        mid.next = null;
+        newHead = reverseNode(newHead);
+        head = mergeLink(head, newHead);
+    }
+    //Find middle node in a linked list
+    private ListNode findMiddleNode(ListNode head){
+        ListNode slow = head, fast = head;
+        while(fast.next != null && fast.next.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    //reverse linked list
+    private ListNode reverseNode(ListNode head){
+        if (head == null || head.next == null)
+            return head;
+        ListNode pre = new ListNode(0);
+        pre.next = head;
+        while(head.next != null){
+            ListNode temp = head.next;
+            head.next = temp.next;
+            temp.next = pre.next;
+            pre.next = temp;
+        }
+        return pre.next;
+    }
+    
+    private ListNode mergeLink(ListNode n1, ListNode n2){
+        ListNode pre = n1;
+        while(n1 != null && n2 != null){
+            ListNode tem1 = n1.next;
+            ListNode tem2 = n2.next;
+            n1.next = n2;
+            n2.next = tem1;
+            n2 = tem2;
+            n1 = tem1;
+        }
+        while(n2 != null)
+            n1.next = n2;
+        return pre.next;
     }
 }
