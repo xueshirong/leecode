@@ -40,4 +40,29 @@ public class Subsets {
              list.remove(list.size() - 1);
          }
      }
+     
+     /**
+      * @param S: A set of numbers.
+      * @return: A list of lists. All valid subsets.
+      */
+     public ArrayList<ArrayList<Integer>> subsets3(int[] nums) {
+         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+         if (nums == null || nums.length == 0)
+             return res;
+         Arrays.sort(nums);
+         ArrayList<Integer> set = new ArrayList<Integer>();
+         helper3(res, nums, 0, set);
+         return res;
+     }
+     
+     private void helper3(ArrayList<ArrayList<Integer>> res, int[] nums,
+                         int index, ArrayList<Integer> set){
+         res.add(new ArrayList<Integer>(set));
+         
+         for (int i = index; i < nums.length; i++){
+             set.add(nums[i]);
+             helper3(res, nums, i+1, set);
+             set.remove(set.size() - 1);
+         }
+     }
 }
