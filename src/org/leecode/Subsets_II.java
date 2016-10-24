@@ -46,4 +46,25 @@ public class Subsets_II {
             list.remove(list.size()-1);
         }
     }
+    
+    public List<List<Integer>> subsetsWithDup3(int[] nums) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0)
+            return res;
+        Arrays.sort(nums);//key point is to sort the array
+        ArrayList<Integer> set = new ArrayList<Integer>();
+        helper3(res, set, nums, 0);
+        return res;
+    }
+    private void helper3(List<List<Integer>> res, List<Integer> list, int[] nums, int pos){
+        res.add(new ArrayList<Integer>(list));
+        
+        for(int i = pos; i < nums.length; i++){
+            if (i != pos && nums[i] == nums[i - 1])
+                continue;
+            list.add(nums[i]);
+            helper3(res, list, nums, i+1);
+            list.remove(list.size() - 1);
+        }
+    }
 }
