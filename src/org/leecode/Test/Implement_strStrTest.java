@@ -12,9 +12,9 @@ public class Implement_strStrTest {
 
 	@Test
 	public void testStrStr() {
-		String haystack = "abcdabcdefg";
-		String needle = "bcd";
-		is.strStr(haystack, needle);
+		String haystack = "abcde";
+		String needle = "e";
+		is.strStr5(haystack, needle);
 	}
 
 	@Test

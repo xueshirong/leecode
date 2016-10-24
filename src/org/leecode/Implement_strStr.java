@@ -101,4 +101,28 @@ public class Implement_strStr {
         }
         return -1;
     }
+    
+    public int strStr5(String source, String target) {
+        if (source == null || target == null || source.length() < target.length()){
+            return -1;
+        }
+        if (source.equals(target)){
+        	return 0;
+        }
+        int s = 0;
+        int len = target.length();
+        while(s + len - 1 < source.length()){
+            int i = 0;
+            for (; i < len; i++){
+                if (target.charAt(i) != source.charAt(s + i)){
+                    break;
+                }
+            }
+            if (i == len){
+                return s;
+            }
+            s++;
+        }
+        return -1;
+    }
 }
