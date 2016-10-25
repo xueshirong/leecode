@@ -43,4 +43,35 @@ public class Permutations_II {
             list.remove(list.size() - 1);
         }
     }
+    
+    public List<List<Integer>> permuteUnique2(int[] nums) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (nums == null || nums.length == 0)
+            return res;
+        Arrays.sort(nums);// key point to sort the array first
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        boolean[] visited = new boolean[nums.length];
+        for ( int i = 0; i < visited.length; i++){
+            visited[i] = false;
+        }
+        helper2(visited, res, list, nums);
+        return res;
+    }
+    private void helper2(boolean[] visited, List<List<Integer>> res, ArrayList<Integer> list, int[] nums){
+        if (list.size() == nums.length){
+            res.add(new ArrayList<Integer>(list));
+            return;
+        }        
+        for (int i = 0; i < nums.length; i++){
+            if (visited[i] == true || (i != 0 && nums[i] == nums[i-1] && visited[i-1] == false))
+                continue;
+           
+            visited[i] = true;
+            list.add(nums[i]);
+            helper2(visited, res, list, nums);
+            list.remove(list.size() - 1);
+            visited[i] = false;
+        }
+        
+    }
 }

@@ -7,7 +7,7 @@ public class Permutations_IITest {
 	Permutations_II p = new Permutations_II();
 	@Test
 	public void testPermuteUnique() {
-		p.permuteUnique(new int[]{1,2});
+		p.permuteUnique2(new int[]{1,1,2});
 	}
 
 }
