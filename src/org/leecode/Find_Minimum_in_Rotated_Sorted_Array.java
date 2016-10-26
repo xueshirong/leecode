@@ -28,4 +28,31 @@ public class Find_Minimum_in_Rotated_Sorted_Array {
             return nums[0];
         return nums[nums.length -1];
     }
+	//From Jiu Zhang
+	public int findMin3(int[] nums) {
+        // write your code here
+		if (nums == null || nums.length == 0)
+            return -1;
+        if (nums[0] < nums[nums.length-1])
+            return nums[0];
+        
+        int s = 0;
+        int e = nums.length - 1;
+        int target = nums[e];
+        while(s + 1 < e){
+            int mid = s + (e - s)/2;
+            if (nums[mid] ==  target)
+                e = mid;
+            else if (nums[mid] < target)
+                e = mid;
+            else{
+                s = mid;
+            }
+        }
+        
+        if (nums[s] <= target)
+            return nums[s];
+        else
+            return nums[e];
+    }
 }

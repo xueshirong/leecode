@@ -12,8 +12,8 @@ public class Find_Minimum_in_Rotated_Sorted_ArrayTest {
 
 	@Test
 	public void testFindMin() {
-		int[] nums = new int[]{4,5,6,7,0,1,2};
-		fm.findMin(nums);
+		int[] nums = new int[]{6,1,2,3,4,5};
+		fm.findMin3(nums);
 	}
 
 }
