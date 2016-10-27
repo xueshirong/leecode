@@ -21,4 +21,24 @@ public class First_Bad_Version {
 			return true;
 		return false;
 	}
+	//From Jiu Zhang
+	public int firstBadVersion2(int n) {
+        // write your code here
+        int s = 1;
+        int e = n;
+        while(s + 1 < e){
+            int mid = s + (e - s)/2;
+            if (isBadVersion(mid))
+                e = mid;
+            else
+                s = mid;
+        }
+        
+        if (isBadVersion(s))
+            return s;
+        else if (isBadVersion(e))
+            return e;
+        else
+            return 0;
+    }
 }
