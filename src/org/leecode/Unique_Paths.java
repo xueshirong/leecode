@@ -21,8 +21,8 @@ public class Unique_Paths {
             path[0][i] = 1;
         }
         
-        for (int i = 1; i < m; i++){
-            for (int j = 1; j < n; j++){
+        for (int i = 1; i < m; i++){//index is from 1
+            for (int j = 1; j < n; j++){//index is from 1
                 path[i][j] = path[i - 1][j] + path[i][j - 1];
             }
         }
