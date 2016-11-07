@@ -27,4 +27,18 @@ public class Climbing_Stairs {
         
         return res[n - 1];
     }
+    
+    public int climbStairs3(int n) {
+        if (n == 0)
+            return 0;
+        int[] path = new int[n];
+        path[0] = 1;
+        path[1] = 2;
+        
+        for (int i = 2; i < n; i++){
+            path[i] = path[i - 1] + path[i - 2];
+        }
+        
+        return path[n - 1];
+    }
 }
