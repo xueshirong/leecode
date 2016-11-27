@@ -7,7 +7,7 @@ import org.leecode.Common.ListNode;
 import org.leecode.Common.Utility;
 
 public class Remove_Nth_Node_From_End_of_ListTest {
-	Remove_Nth_Node_From_End_of_List rnnfeol = new Remove_Nth_Node_From_End_of_List();
+	Remove_Nth_Node_From_End_of_List p = new Remove_Nth_Node_From_End_of_List();
 	@Before
 	public void setUp() throws Exception {
 	}
@@ -15,14 +15,8 @@ public class Remove_Nth_Node_From_End_of_ListTest {
 	@Test
 	public void testRemoveNthFromEnd() {
 		ListNode head = Utility.getTestListNode();
-		/*while(head != null){
-			System.out.println(head.val);
-			head = head.next;
-		}*/
-		ListNode newHead = rnnfeol.removeNthFromEnd(head,1);
-		while(newHead != null){
-			System.out.println(newHead.val);
-			newHead = newHead.next;
-		}
+		p.removeNthFromEnd3(head, 2);
+		//ListNode newHead = rnnfeol.removeNthFromEnd3(head,2);
+		
 	}
 }

@@ -41,11 +41,39 @@ public class Remove_Nth_Node_From_End_of_List {
                 return null;
             fast = fast.next;
         }
+        
         while(fast.next != null){//fast is the last non-null node
             fast = fast.next;
             slow = slow.next;
         }
         slow.next = slow.next.next;//del nth node
         return dump.next;
+    }
+	
+	public ListNode removeNthFromEnd3(ListNode head, int n) {
+        //corner case
+        if (head == null || n == 0)
+            return head;
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        ListNode slow = dummy;
+        ListNode fast = head;
+        int i = 1;
+        
+        while(fast != null && i < n){
+            i++;
+            fast = fast.next;
+        }
+        
+        while (fast.next != null){
+            fast = fast.next;
+            slow = slow.next;
+            head = head.next;
+        }
+        
+        slow.next = head.next;
+        head.next = null;
+        
+        return dummy.next;
     }
 }

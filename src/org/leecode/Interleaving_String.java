@@ -3,6 +3,7 @@ package org.leecode;
 public class Interleaving_String {
 	//Given three strings: s1, s2, s3, determine whether s3 is formed by 
 	//the interleaving of s1 and s2.
+	//refer:http://www.cnblogs.com/imjustice/p/solve_Interleaving_String_in_leetcode.html
 	/**
      * Determine whether s3 is formed by interleaving of s1 and s2.
      * @param s1, s2, s3: As description.
