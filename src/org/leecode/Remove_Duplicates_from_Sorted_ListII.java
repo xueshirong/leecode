@@ -53,4 +53,27 @@ public class Remove_Duplicates_from_Sorted_ListII {
         }
         return dummy.next;
     }
+	
+	public static ListNode deleteDuplicates3(ListNode head) {
+        //corner case
+        if (head == null || head.next == null)
+            return head;
+        ListNode dummy = new ListNode(0);
+        ListNode pre = dummy;
+        dummy.next = head;
+        while(head != null && head.next != null){
+            if (head.val != head.next.val){
+                head = head.next;
+                pre = pre.next;
+                continue;
+            }else{
+                while (head != null && head.next != null && head.val == head.next.val){
+                    head = head.next;
+                }
+                head = head.next;
+                pre.next = head;
+            }
+        }
+        return dummy.next;
+    }
 }
