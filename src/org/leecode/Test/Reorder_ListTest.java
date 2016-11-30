@@ -15,6 +15,6 @@ public class Reorder_ListTest {
 		head.next = n2;
 		n2.next = n3;
 		n3.next = n4;
-		p.reorderList2(head);
+		p.reorderList3(head);
 	}
 }
