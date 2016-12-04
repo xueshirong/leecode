@@ -33,7 +33,7 @@ public class Sort_Colors {
         int l = 0;
         int i =0;
         int r = nums.length - 1;
-        while(i < r){
+        while(i <= r){
             if (nums[i] == 0){
                 swap(nums, i, l);
                 l++;
@@ -46,6 +46,25 @@ public class Sort_Colors {
             	i++;
             
         }        
+    }
+    
+    public void sortColors3(int[] nums) {
+        //corner case
+        if (nums == null || nums.length == 0)
+            return;
+        int left = 0, right = nums.length -1, i = 0;
+        while (i <= right){
+            if (nums[i] == 0){
+                swap(nums, i, left);
+                left++;
+                i++;
+            }else if (nums[i] == 1){
+                i++;
+            }else{//nums[i] == 2
+                swap(nums, i, right);
+                right--;
+            }
+        }
     }
     
 }
