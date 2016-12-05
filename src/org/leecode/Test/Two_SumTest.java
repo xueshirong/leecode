@@ -19,8 +19,8 @@ public class Two_SumTest {
 
 	@Test
 	public void testTwoSum2() {
-		int[] nums = new int[]{3,2,4};
-		ts.twoSum3(nums, 6);
+		int[] nums = new int[]{1,0,-1};
+		ts.twoSum4(nums, -1);
 	}
 
 }

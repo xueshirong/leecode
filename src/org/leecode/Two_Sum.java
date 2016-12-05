@@ -1,5 +1,7 @@
 package org.leecode;
 
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,6 +48,45 @@ public class Two_Sum {
             }
         }
         return null;
+    }
+	
+	//----------------------------------------------two pointer
+	class pair{
+        int val;
+        int index;
+        public pair(int v, int i){
+            val = v;
+            index = i;
+        }
+    }
+    public int[] twoSum4(int[] numbers, int target) {
+        int[] res = new int[2];
+        //corner case
+        if (numbers == null || numbers.length < 2)
+            return res;
+        pair[] p = new pair[numbers.length];
+        for (int i = 0; i < numbers.length; i++){
+            p[i] =  new pair(numbers[i], i + 1);
+        }
+        Arrays.sort(p, new Comparator<pair>(){
+            public int compare(pair a, pair b){
+                return a.val - b.val;
+            }
+        });
+        int l = 0, r = numbers.length - 1;
+        while (l < r){
+            int sum = p[l].val + p[r].val;
+            if (sum == target){
+            	res[0] = Math.min(p[l].index, p[r].index);
+                res[1] = Math.max(p[l].index, p[r].index);
+                return res;
+            }else if(sum < target){
+                l++;
+            }else{
+                r--;
+            }
+        }
+        return res;
     }
 	
 }
