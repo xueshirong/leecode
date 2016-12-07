@@ -24,6 +24,7 @@ public class Hash_Function {
             res = (key[i] + res * 33);
             res = res % HASH_SIZE;
         }
+
 	return (int)res;
     }
 }
