@@ -27,4 +27,10 @@ public class Hash_Function {
 
 	return (int)res;
     }
+    
+   /* 模运算与基本四则运算有些相似，但是除法例外。其规则如下：
+    (a + b) % p = (a % p + b % p) % p （1）
+    (a - b) % p = (a % p - b % p) % p （2）
+    (a * b) % p = (a % p * b % p) % p （3）
+    a ^ b % p = ((a % p)^b) % p （4）*/
 }
