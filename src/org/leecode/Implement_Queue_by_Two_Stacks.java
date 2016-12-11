@@ -6,15 +6,19 @@ public class Implement_Queue_by_Two_Stacks {
 	public Implement_Queue_by_Two_Stacks(){
 		Queues qu = new Queues();
 		qu.push(1);
-		System.out.println(qu.pop());
-		//qu.pop()
 		qu.push(2); 
 		qu.push(3);
 		System.out.println(qu.top());
 		System.out.println(qu.pop());
+		System.out.println(qu.pop());
+		qu.push(4);
+		System.out.println(qu.top());
 	}	
 }
-
+//stack1 is saving all input val
+//stack2 is saving all output val
+//when stack2 is not empty, pop from stack2
+//when stack2 is empty, copy stack1 to stack2, then pop stack2 to get val
 class Queues {
 	private Stack<Integer> stack1;
     private Stack<Integer> stack2;
