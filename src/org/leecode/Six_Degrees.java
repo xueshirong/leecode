@@ -1,10 +1,11 @@
 package org.leecode;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
+
+import org.leecode.Common.UndirectedGraphNode;
 
 public class Six_Degrees {
 	/**
@@ -44,7 +45,7 @@ public class Six_Degrees {
 }
 
 // Definition for Undirected graph.
-class UndirectedGraphNode {
+/*class UndirectedGraphNode {
 	int label;
 	List<UndirectedGraphNode> neighbors;
 
@@ -52,4 +53,4 @@ class UndirectedGraphNode {
 		label = x;
 		neighbors = new ArrayList<UndirectedGraphNode>();
 	}
-};
+};*/
