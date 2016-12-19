@@ -2,6 +2,7 @@ package org.leecode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Subsets_II {
@@ -65,6 +66,33 @@ public class Subsets_II {
             list.add(nums[i]);
             helper3(res, list, nums, i+1);
             list.remove(list.size() - 1);
+        }
+    }
+    
+    //solution 4 
+    public ArrayList<ArrayList<Integer>> subsetsWithDup4(int[] nums) {
+        
+        ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();
+        if (nums == null || nums.length == 0)
+            return res;
+        Arrays.sort(nums);
+        List<Integer> list = new ArrayList<Integer>();
+        helper(res,list,nums,0);
+        return res;
+    }
+    
+    public void helper(ArrayList<ArrayList<Integer>> rst, List<Integer> list,
+    int[] nums, int pos) {
+        if (!rst.contains(list))
+            rst.add( new ArrayList(list));
+        for ( int i = pos; i < nums.length; i++){
+            /*if ( i != pos && S.get(i) == S.get(i-1)){
+                continue;
+            }*/
+  
+            list.add(nums[i]);
+            helper(rst,list,nums,i+1);
+            list.remove(list.size()-1);
         }
     }
 }
