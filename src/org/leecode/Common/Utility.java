@@ -1,5 +1,7 @@
 package org.leecode.Common;
 
+import org.leecode.TreeNode;
+
 public class Utility {
 	public static ListNode getTestListNode(){
 		ListNode A = new ListNode(1);
@@ -45,6 +47,7 @@ public class Utility {
 	}
 
 	public static ListNode getTestDuplicatesListNode(){
+
 		ListNode A = new ListNode(1);
 		ListNode B = new ListNode(1);
 		ListNode C = new ListNode(2);
@@ -62,5 +65,11 @@ public class Utility {
 		F.next = G;
 		G.next = H;*/
 		return A;
+	}
+	
+	public static TreeNode getTestTreeNode(int[] list){
+		
+		
+		return null;
 	}
 }
