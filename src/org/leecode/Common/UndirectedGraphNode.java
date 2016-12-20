@@ -6,7 +6,7 @@ public class UndirectedGraphNode {
 	//Definition for Undirected graph.
     public int label;
     public ArrayList<UndirectedGraphNode> neighbors;
-    UndirectedGraphNode(int x) {
+    public UndirectedGraphNode(int x) {
   	  label = x; 
   	  neighbors = new ArrayList<UndirectedGraphNode>(); 
     }	      

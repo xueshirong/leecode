@@ -6,6 +6,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import org.leecode.Common.UndirectedGraphNode;
+
 public class Clone_Graph {
 	/**
      * @param node: A undirected graph node
