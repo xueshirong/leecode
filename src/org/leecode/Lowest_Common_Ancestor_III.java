@@ -27,26 +27,20 @@ public class Lowest_Common_Ancestor_III {
             
         return res;
     }
-    //check 2 nodes are in the tree or not
-    private TreeNode findNode(TreeNode root, TreeNode A, TreeNode B){
+    
+    //check 2 nodes are in the tree or not. inorder to traverse
+    private void findNode(TreeNode root, TreeNode A, TreeNode B){
         if (root == null)
-            return null;
+            return;
         if (root.val == A.val)
             isA = true;
         if (root.val == B.val)
             isB = true;
             
-        TreeNode left = findNode(root.left, A, B);
-        TreeNode right = findNode(root.right, A, B);
-        
-        if (left != null && right != null)
-            return root;
-        if (left != null)
-            return left;
-        if (right != null)
-            return right;
-        return null;
+        findNode(root.left, A, B);
+        findNode(root.right, A, B);
     }
+    
     //if 2 nodes are in the tree, use standard method to continue
     private TreeNode helper(TreeNode root, TreeNode A, TreeNode B){
          if (root == null || root.val == A.val || root.val == B.val)
