@@ -125,4 +125,33 @@ public class Implement_strStr {
         }
         return -1;
     }
+    
+    //-------------solution
+    /**
+     * Returns a index to the first occurrence of target in source,
+     * or -1  if target is not part of source.
+     * @param source string to be scanned.
+     * @param target string containing the sequence of characters to match.
+     */
+    public int strStr6(String source, String target) {
+        if (source == null || target == null || source.length() < target.length()){
+            return -1;
+        }
+        if (source.equals(target)){
+        	return 0;
+        }
+        int start = 0;
+        while (start + target.length() <= source.length()){
+            int index = 0;
+            for (int i = 0; i < target.length(); i++){
+                if (target.charAt(i) != source.charAt(start + i))
+                    break;
+                index++;
+            }
+            if (index == target.length())
+                return start;
+            start++;
+        }
+        return -1;
+    }
 }

@@ -18,9 +18,9 @@ public class Implement_strStrTest {
 	}
 
 	@Test
-	public void testStrStr2() {
-		String haystack = "abc";
-		String needle = "c";
-		is.strStr4(haystack, needle);
+	public void testStrStr6() {
+		String haystack = "abcdabcdefg";
+		String needle = "bcd";
+		is.strStr6(haystack, needle);
 	}
 }
