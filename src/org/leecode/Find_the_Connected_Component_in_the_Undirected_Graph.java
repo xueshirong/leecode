@@ -7,6 +7,8 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+import org.leecode.Common.UndirectedGraphNode;
+
 public class Find_the_Connected_Component_in_the_Undirected_Graph {
 	//1. From 1st node of list, search all nodes that can reache, 
 	//they are one connected component, add them to new list, and remove from old list.
