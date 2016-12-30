@@ -49,4 +49,32 @@ public class Binary_Tree_Level_Order_Traversal_II {
         Collections.reverse(res);
         return res;
     }
+    
+    //solution 3 BFS
+  //BFS
+    public List<List<Integer>> levelOrderBottom3(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null)
+            return res;
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        
+        while(!queue.isEmpty()){
+            List<Integer> list = new ArrayList<Integer>();
+            int height = queue.size();
+            for (int i = 0; i < height; i++){
+                TreeNode head = queue.poll();
+                if (head != null)
+                    list.add(head.val);
+                if (head.left != null)
+                    queue.offer(head.left);
+                if (head.right != null)
+                    queue.offer(head.right);
+            }
+            res.add(0, list);
+        }
+        //Collections.reverse(res);
+        return res;
+    }
+    
 }
