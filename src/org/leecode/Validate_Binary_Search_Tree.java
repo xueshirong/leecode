@@ -39,4 +39,25 @@ public class Validate_Binary_Search_Tree {
                               Math.max(root.val, right.maxValue),
                               Math.min(root.val, left.minValue));
     }
+    
+    //solution 2
+    /**
+     * @param root: The root of binary tree.
+     * @return: True if the binary tree is BST, or false
+     */
+    public boolean isValidBST2(TreeNode root) {
+        // write your code here
+        if (root == null)
+            return true;
+        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+    private boolean helper(TreeNode root, long min, long max){//long, not integer
+        if (root == null)
+            return true;
+        if (root.val >= max || root.val <= min)
+            return false;
+        boolean left = helper(root.left, min, root.val);
+        boolean right = helper(root.right, root.val, max);
+        return left && right;
+    }
 }
