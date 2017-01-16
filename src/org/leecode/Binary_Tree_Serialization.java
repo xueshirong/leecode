@@ -8,19 +8,11 @@ public class Binary_Tree_Serialization {
      */
 	StringBuilder sb = new StringBuilder();
     public String serialize(TreeNode root) {
-        //corner case 
-        /*if (root == null)
-            return "#";
-        sb.append("," + root.val);
-        sb.append("," + serialize(root.left));
-        sb.append("," + serialize(root.right));
-        
-        return sb.toString();*/
-    	if (root == null) {
-            sb.append("null ");
+        if (root == null) {
+            sb.append("#,");
         }
         else {
-            sb.append(root.val + " ");
+            sb.append(root.val + ",");
             serialize(root.left);
             serialize(root.right);
         }
@@ -37,15 +29,6 @@ public class Binary_Tree_Serialization {
      */
     public TreeNode deserialize(String data) {
         TreeNode root = null;
-        //corner case
-        /*if (data == "#")
-            return null;
-        String val = data.substring(0,data.indexOf(","));
-        root = new TreeNode(Integer.valueOf(val));
-        root.left = deserialize(data.substring(data.indexOf(",", data.length())));
-        root.right = deserialize(data.substring(data.indexOf(",", data.length())));
-        return root;*/
-        
         sb = new StringBuilder(data);
         return helper(root);
     }
@@ -55,9 +38,9 @@ public class Binary_Tree_Serialization {
             return null;
         }
 
-        String temp = sb.substring(0, sb.indexOf(" "));
-        sb = sb.delete(0,sb.indexOf(" ") + 1);
-        if (temp.equals("null")) {
+        String temp = sb.substring(0, sb.indexOf(","));
+        sb = sb.delete(0,sb.indexOf(",") + 1);
+        if (temp.equals("#")) {
             root = null;
         }
         else {
