@@ -73,7 +73,8 @@ public class String_to_Integer_atoi {
         res = sign * res;
         return (int)res;
     }
-	
+	//solution 3
+	//note + - 号，溢出，以及非数字
 	public int myAtoi3(String str) {
         str = str.trim();
         if (str.equals(""))
