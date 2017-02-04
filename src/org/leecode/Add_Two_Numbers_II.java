@@ -64,7 +64,8 @@ public class Add_Two_Numbers_II {
         }
         return pre;
     }
-    //solution 2 不用翻转list,用stack存储
+    
+    //..... Solution 2 不用翻转list,用stack存储
     public ListNode addTwoNumbers2(ListNode l1, ListNode l2) {
         Stack<Integer> s1 = new Stack<Integer>();
         Stack<Integer> s2 = new Stack<Integer>();
