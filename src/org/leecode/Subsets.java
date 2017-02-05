@@ -28,7 +28,7 @@ public class Subsets {
          if (nums == null || nums.length == 0)
              return res;
          List<Integer> list = new ArrayList<Integer>();
-         Arrays.sort(nums);
+         Arrays.sort(nums);//key point
          helper2(res, list,nums, 0);
          return res;
     }    
