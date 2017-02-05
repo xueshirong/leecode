@@ -53,7 +53,7 @@ public class Merge_k_Sorted_Lists {
         return head;
     }
     private ListNode helper(List<ListNode> lists, int start, int end){
-        if (start == end)
+        if (start == end)//key point
             return lists.get(start);
         int mid = start + (end - start)/2;
         ListNode left = helper(lists, start, mid);
