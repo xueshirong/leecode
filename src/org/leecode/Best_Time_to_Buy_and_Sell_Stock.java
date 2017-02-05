@@ -16,6 +16,7 @@ public class Best_Time_to_Buy_and_Sell_Stock {
         return profit;
     }
 	//From Jiu Zhang
+	//思路：始终记录最低价min。每次循环里，都与min比较，并计算profit
 	public int maxProfit2(int[] prices) {
         int profit = 0;
         if (prices == null || prices.length == 0)
