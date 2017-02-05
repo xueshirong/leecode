@@ -54,7 +54,7 @@ public class Validate_Binary_Search_Tree {
     private boolean helper(TreeNode root, long min, long max){//long, not integer
         if (root == null)
             return true;
-        if (root.val >= max || root.val <= min)
+        if (root.val >= max || root.val <= min)//key point. avoid duplicated value: [1, 1]
             return false;
         boolean left = helper(root.left, min, root.val);
         boolean right = helper(root.right, root.val, max);
