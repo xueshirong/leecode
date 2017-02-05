@@ -1,6 +1,8 @@
 package org.leecode;
 
 public class Rotate_Image {
+	//[解题思路]
+    //首先对角线翻转一次，然后按y轴中线翻转一次。
 	public void rotate(int[][] matrix) {
         for (int i =0; i < matrix.length; i++){//reverse left and right
             for (int j = i + 1; j < matrix.length; j++){//reverse by diagonal   j=i+1
