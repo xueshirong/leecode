@@ -21,7 +21,7 @@ public class Word_Break {
         
         //function
         for(int i=1; i <= s.length(); i++){
-            for(int j=1; j <= max && j <= i; j++){//j is from end to start
+            for(int j=0; j <= max && j <= i; j++){//j is from end to start
                 if(path[i - j] && dict.contains(s.substring(i-j, i))){
                     path[i] = true;
                     break;

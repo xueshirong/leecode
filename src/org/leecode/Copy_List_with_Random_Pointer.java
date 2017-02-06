@@ -27,8 +27,39 @@ public class Copy_List_with_Random_Pointer {
         }        
         return empty.next;
     }
-	//From Jiu Zhang
+	//..............
 	public RandomListNode copyRandomList2(RandomListNode head) {
+        //corner case
+        if(head == null)
+            return null;
+        RandomListNode oldHead = head;
+        RandomListNode dummy = new RandomListNode(0);
+        RandomListNode newHead = dummy;
+        Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode, RandomListNode>();
+        //copy next node
+        while (head != null){
+            RandomListNode node = new RandomListNode(head.label);
+            map.put(head, node);
+            newHead.next = node;
+            newHead = newHead.next;
+            head = head.next;
+        }
+        newHead = dummy;
+        head = oldHead;
+        //copy randome node
+        while (head != null){
+            if (head.random != null){
+                RandomListNode node = map.get(head);
+                RandomListNode random = map.get(head.random);
+                node.random = random;
+            }
+            head = head.next;
+        }
+        return dummy.next;
+    }
+	
+	//.........From Jiu Zhang
+	public RandomListNode copyRandomList3(RandomListNode head) {
         if (head == null)
             return null;
         Map<RandomListNode, RandomListNode> map = new HashMap<RandomListNode,RandomListNode>();
