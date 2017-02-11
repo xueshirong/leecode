@@ -6,7 +6,6 @@ import org.leecode.Common.ListNode;
 
 public class Palindrome_Linked_List {
 	public boolean isPalindrome(ListNode head) {
-        
         ArrayList<Integer> al = new ArrayList<Integer>();
         while(head != null){
             al.add(head.val);
