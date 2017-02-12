@@ -27,4 +27,22 @@ public class Valid_Parentheses {
             return true;
         return false;
     }
+    
+    //solution 2
+    public boolean isValid2(String s) {
+        //corner case
+        if (s == null || s.equals(""))
+            return false;
+        Stack<Character> stack = new Stack<Character>();
+        for (int i = 0; i < s.length(); i++){
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{'){
+                stack.add(c);
+            }else if (!stack.isEmpty() && isPair(stack.peek(), c)){
+                stack.pop();
+            }else
+                return false;
+        }
+        return stack.isEmpty();
+    }
 }
