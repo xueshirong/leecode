@@ -4,7 +4,31 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Roman_to_Integer {
+	//from jiu zhang
+	//save Roman char to map; back loop char in s to get res, if char[i + 1] > char[i], that is IV, 
+	// should be minus value
 	public int romanToInt(String s) {
+        //corner case
+        if (s == null || s.equals(""))
+            return 0;
+        Map<Character, Integer> map = new HashMap<Character, Integer>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+        int res = map.get(s.charAt(s.length() - 1));
+        for (int i = s.length() - 2; i > -1; i--){
+            if (map.get(s.charAt(i + 1)) <= map.get(s.charAt(i)))//VII. key point <=
+                res += map.get(s.charAt(i));
+            else//IV
+                res -= map.get(s.charAt(i));
+        }
+        return res;
+    }
+	public int romanToInt1(String s) {
         int len = s.length();
         int pre = this.char2int(s.charAt(0));
         if (len == 1){
