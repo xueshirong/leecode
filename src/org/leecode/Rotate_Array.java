@@ -22,8 +22,9 @@ public class Rotate_Array {
 	public void rotate2(int[] nums, int k) {
         if (nums == null || nums.length < 2 || k%nums.length == 0)
             return;
-        k = k % nums.length;
-        
+        k = k % nums.length;//key point. avoid to k 远大于数组长度
+        if(k == 0)
+            return;        
         reverse(nums, 0, nums.length - k - 1);
         reverse(nums, nums.length - k, nums.length - 1);
         reverse(nums, 0, nums.length - 1);
