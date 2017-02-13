@@ -6,6 +6,7 @@ public class Reverse_Words_in_a_String_II {
 
 	//The input string does not contain leading or trailing spaces and the words are always separated by a single space.
 	//Could you do it in-place without allocating extra space?
+	//思路：先reverse 整个s；再逐个单词reverse
 	public void reverseWords(char[] s) {
 		//corner case
 		if (s == null || s.length == 0)
