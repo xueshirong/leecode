@@ -3,7 +3,6 @@ package org.leecode;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class Intersection_of_Two_Arrays_II {
 	public int[] intersect(int[] nums1, int[] nums2) {
