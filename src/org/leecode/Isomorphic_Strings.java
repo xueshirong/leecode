@@ -13,7 +13,7 @@ public class Isomorphic_Strings {
                 if (!table.get(cS).equals(cT)){
                     return false;
                 }
-            }else if (table.containsValue(cT)){//key point to check if t is in the value
+            }else if (table.containsValue(cT)){//key point to check if t is in the value. N:1 (egg, aaa)
                 return false;
             }else{
                 table.put(cS,cT);
