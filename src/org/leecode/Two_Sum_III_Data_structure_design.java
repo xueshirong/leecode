@@ -31,16 +31,15 @@ class TwoSum {
 
     // Find if there exists any pair of numbers which sum is equal to the value.
     public boolean find(int value) {
-        for(Integer i: map.keySet()) {
-            int x = value - i;
-            if(map.containsKey(x)){
-                if(x == i && map.get(i) >= 2){
-                    return true;
-                }else if( x != i){
-                    return true;
-                } 
-            }
-        }
+		for (Integer i : map.keySet()) {
+			int x = value - i;
+			if (x == i && map.get(i) >= 2) {
+				return true;
+			} 
+			if (x != i && map.containsKey(x)) {
+				return true;
+			}
+		}
         return false;
     }
 }
