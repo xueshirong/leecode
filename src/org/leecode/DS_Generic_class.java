@@ -1,6 +1,6 @@
 package org.leecode;
 
-public class Generic_class {
+public class DS_Generic_class {
 	/*
 	 * https://www.tutorialspoint.com/java/java_generics.htm
 	 * It would be nice if we could write a single sort method that could sort the elements in an 
