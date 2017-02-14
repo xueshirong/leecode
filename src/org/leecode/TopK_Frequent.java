@@ -10,14 +10,19 @@ import java.util.PriorityQueue;
 
 public class TopK_Frequent {
 	//from jiu zhang
+	//1. put all ele and frequent to map
+	//2. loop map to get first k eles
+	//3. 
 	public List<Integer> topKFrequent(int[] nums, int k) {
         Map<Integer, Integer> hashmap = new HashMap<Integer, Integer>();
+        // create a min heap
         PriorityQueue<Map.Entry<Integer, Integer>> queue = new PriorityQueue<Map.Entry<Integer, Integer>>(
             new Comparator<Map.Entry<Integer, Integer>>() {
                 public int compare(Map.Entry<Integer, Integer> e1, Map.Entry<Integer, Integer> e2) {
                     return e1.getValue() - e2.getValue();
                 }
             });
+        //count the frequency for each element
         for (int i = 0; i < nums.length; i++) {
             if (!hashmap.containsKey(nums[i])) {
                 hashmap.put(nums[i], 1);
@@ -25,7 +30,7 @@ public class TopK_Frequent {
                 hashmap.put(nums[i], hashmap.get(nums[i]) + 1);
             }
         }
-        
+        //maintain a heap of size k. 
         for (Map.Entry<Integer, Integer> entry : hashmap.entrySet()) {
             if (queue.size() < k) {
                 queue.offer(entry);
@@ -34,7 +39,7 @@ public class TopK_Frequent {
                 queue.offer(entry);
             }
         }
-        
+        //get all elements from the heap
         List<Integer> ans = new ArrayList<Integer>();
         for (Map.Entry<Integer, Integer> entry : queue)
             ans.add(entry.getKey());
