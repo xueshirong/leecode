@@ -3,7 +3,7 @@ package org.leecode;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Symmetric_Tree {
+public class Symmetric_Mirror_Tree {
 	public boolean isSymmetric(TreeNode root) {
         if (root == null) return true;
         
