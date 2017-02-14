@@ -1,6 +1,7 @@
 package org.leecode;
 
 public class Sqrt_x {
+	//from jiu zhang
 	public int sqrt(int x) {
 		int left = 1, right = x;
         while (left + 1 < right){
