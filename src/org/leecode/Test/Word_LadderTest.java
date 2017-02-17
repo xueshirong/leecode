@@ -18,7 +18,7 @@ public class Word_LadderTest {
 		wordList.add("dog");
 		wordList.add("lot");
 		wordList.add("log");
-		wordList.add("cog");
+		//wordList.add("cog");
 		
 		p.ladderLength(beginWord, endWord, wordList);
 	}
