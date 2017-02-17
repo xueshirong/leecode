@@ -43,6 +43,36 @@ public class Permutations_II {
             list.remove(list.size() - 1);
         }
     }
+    //..............
+    public List<List<Integer>> permuteUnique1(int[] nums) {
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        //corner case
+        if (nums == null || nums.length == 0)
+            return res;
+        Arrays.sort(nums);// key point to sort the array first
+        List<Integer> path = new ArrayList<Integer>();
+        boolean[] vis = new boolean[nums.length];
+        helper1(nums, path, vis, res);
+        return res;
+    }
+    private void helper1(int[] nums, List<Integer> path, boolean[] vis, List<List<Integer>> res){
+        if (path.size() == nums.length){
+            res.add(new ArrayList<Integer>(path));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++){
+            if (vis[i])
+                continue;
+            else if (i != 0 && nums[i] == nums[i - 1])
+                continue;
+            vis[i]= true;
+            path.add(nums[i]);
+            helper1(nums, path, vis, res);
+            path.remove(path.size() - 1);
+            vis[i] = false;
+        }
+        
+    }
     
     public List<List<Integer>> permuteUnique2(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
