@@ -46,7 +46,9 @@ class TwoSum {
         return false;
     }
 }
-//more find and less add
+//more find and less add. 
+//1. Use extra set to save all sum value in add function
+//2. find target directly from hashset
 class TwoSum2 {
     Set<Integer> sum;
     Set<Integer> num;
@@ -57,7 +59,7 @@ class TwoSum2 {
     }
     // Add the number to an internal data structure.
 	public void add(int number) {
-	    if(num.contains(number)){
+	    if(num.contains(number)){// no need to check this condition.
 	        sum.add(number * 2);
 	    }else{
 	        Iterator<Integer> iter = num.iterator();
