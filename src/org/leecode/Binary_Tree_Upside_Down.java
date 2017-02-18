@@ -6,6 +6,20 @@ public class Binary_Tree_Upside_Down {
 	//flip it upside down and turn it into a tree where the original right nodes turned into left leaf nodes. 
 	//Return the new root.
 	//For example:Given a binary tree {1,2,3,4,5},return the root of the binary tree [4,5,2,#,#,3,1].
+	public TreeNode UpsideDownBinaryTree3(TreeNode root){
+		TreeNode node = helper(root, null);
+		return node;
+	}	
+	private TreeNode helper(TreeNode root, TreeNode parent){
+		if (root == null)
+			return parent;
+		TreeNode node = helper(root.left, root);
+		if (parent != null)
+			root.left = parent.right;
+		root.right = parent;
+		
+		return node;
+	}
 	
 	//最终的形态是要把siblings连起来，然后打断右孩子和原parent的连接。
 	//1. find the most left node as new root.
@@ -13,7 +27,8 @@ public class Binary_Tree_Upside_Down {
 	//3. the new root's parent == parent
 	//Recursion	
 	public TreeNode UpsideDownBinaryTree(TreeNode root){
-        return dfsBottomUp(root, null);
+		TreeNode node = dfsBottomUp(root, null);
+        return node;
 	}
 	private TreeNode dfsBottomUp(TreeNode p, TreeNode parent){
         if(p == null)
@@ -24,7 +39,7 @@ public class Binary_Tree_Upside_Down {
         return root;
 	}
 	
-	//iteration
+	//iteration.................................
 	public TreeNode UpsideDownBinaryTree1(TreeNode root) {  
 	    TreeNode node = root, parent = null, right = null;  
 	    while (node != null) {  
@@ -38,7 +53,7 @@ public class Binary_Tree_Upside_Down {
 	    return parent;  
 	}
 	
-	//把后续遍历转换成层次遍历
+	//把后续遍历转换成层次遍历............................
 	private TreeNode out = null;  
 	public TreeNode UpsideDownBinaryTree2(TreeNode root) {     
 	    TreeNode dummy = new TreeNode(0);  
