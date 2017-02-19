@@ -12,8 +12,8 @@ public class Product_of_Array_Except_SelfTest {
 
 	@Test
 	public void testProductExceptSelf() {
-		int[] nums = new int[]{0,0};
-		pae.productExceptSelf(nums);
+		int[] nums = new int[]{9,0,-2};
+		pae.productExceptSelf1(nums);
 	}
 
 }

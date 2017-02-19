@@ -17,4 +17,18 @@ public class Product_of_Array_Except_Self {
         
         return right;
 	}
+	
+	//1. get all product for all nums
+    //2. use total product to divide each num
+    public int[] productExceptSelf1(int[] nums) {
+    	int[] res = new int[nums.length];
+        res[0] = 1;
+        for (int i = 1; i < nums.length; i++){
+            res[i] = res[i - 1] * nums[i - 1];
+        }
+        for (int i = nums.length - 2; i > -1; i--){
+            res[i] = res [i + 1] * nums[i + 1];
+        }
+        return res;
+    }
 }
