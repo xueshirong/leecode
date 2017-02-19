@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.util.HashMap;
 
 public class Max_Points_on_a_Line {
-	public int maxPoints(Point[] points) {
+	public int maxPoints1(Point[] points) {
         if(points.length <= 1) return points.length;
         int max = Integer.MIN_VALUE;
         for(int i = 0; i < points.length; i++){
@@ -34,5 +34,33 @@ public class Max_Points_on_a_Line {
             max = Math.max(currMax, max);
         }
         return max;
+    }
+	//.............
+	public int maxPoints(Point[] points) {
+        if(points == null || points.length == 0) return 0;
+        int max = 0;
+        for(int i=0;i<points.length-1;i++){
+            HashMap<Double, Integer> pointsOnLine = new HashMap<>();
+            int samePoint = 0, localMax = 0;
+            for(int j=i+1;j<points.length;j++){
+                int x = points[j].x - points[i].x;
+                int y = points[j].y - points[i].y;
+                if(x == 0 && y== 0) {
+                    samePoint++;
+                    continue;
+                }
+                double ratio = findRatio(x,y);
+                if(!pointsOnLine.containsKey(ratio))
+                    pointsOnLine.put(ratio, 1);
+                else pointsOnLine.put(ratio, pointsOnLine.get(ratio)+1);
+                localMax = Math.max(localMax, pointsOnLine.get(ratio));
+            }
+            max = Math.max(max, localMax + samePoint);
+        }
+        return max+1;
+    }
+    private Double findRatio(int x, int y){
+        if(y == 0) return Double.MAX_VALUE;
+        else return (double)x/(double) y + 0.0;
     }
 }
