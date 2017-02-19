@@ -13,7 +13,7 @@ public class Shortest_Word_Distance {
 	//1. two pointer: idx1, idx2分别用来记录两个word各自的位置
 	//2.遍历给定的words数组，如果遍历到的word[i]等于word1的话， 获取idx1的位置，
 	//如果idx2不为-1的情况下，取distance = |idx2-idx1|; 
-	//因为要找一个最小的distance，所以再做个比较； 同理，遍历到的word[i]等于word
+	//因为要找一个最小的distance，所以再做个比较； 同理，遍历到的word[i]等于word2
 	public int shortestDistance(String[] words, String word1, String word2) {
         if (word1 == word2 || words == null || words.length == 0) return 0;
         int idx1 = -1, idx2 = -1;
