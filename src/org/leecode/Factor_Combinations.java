@@ -36,7 +36,7 @@ public class Factor_Combinations {
         for(int i=start; i<=n; i++){
             if(n % i == 0){
                 list.add(i);
-                helper(lists, n/i, i, list);
+                helper(lists, n/i, i, list);//key point: n/i
                 list.remove(list.size()-1);
             }
         }
