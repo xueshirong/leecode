@@ -28,4 +28,25 @@ public class Shortest_Word_Distance_III {
 		}
 		return minDistance;
 	}
+	
+	public int shortestWordDistance1(String[] words, String word1, String word2) {
+        //corner case
+        if (words == null || words.length == 0 || word1 == "" || word2 == "")
+            return 0;
+        int idx1 = -1, idx2 = -1;
+        int dis = Integer.MAX_VALUE;
+        for (int i = 0; i < words.length; i++){
+            if (words[i] == word1){
+                idx1 = i;
+            }
+            if (words[i] == word2){
+                if (word2 == word1)
+                    idx1 = idx2;
+                idx2 = i;
+            }
+            if (idx1 > -1 && idx2 > -1)
+                dis = Math.min(dis, Math.abs(idx1 - idx2));
+        }
+        return dis;
+    }
 }
