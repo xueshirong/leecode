@@ -7,27 +7,29 @@ public class Reverse_Words_in_a_String_II {
 	//The input string does not contain leading or trailing spaces and the words are always separated by a single space.
 	//Could you do it in-place without allocating extra space?
 	//思路：先reverse 整个s；再逐个单词reverse
-	public void reverseWords(char[] s) {
-		//corner case
-		if (s == null || s.length == 0)
-			return;
-		reverse(s, 0, s.length);
-		int start = 0;
-		for (int i = 0; i < s.length; i++){
-			if (s[i] == ' '){
-				reverse(s, start, i - 1);
-				start = i + 1;
-			}			
-		}		
-		return;
+	public void reverseWords1(char[] s) {
+	    // Three step to reverse
+	    // 1, reverse the whole sentence
+	    reverse(s, 0, s.length - 1);
+	    // 2, reverse each word
+	    int start = 0;
+	    for (int i = 0; i < s.length; i++) {
+	        if (s[i] == ' ') {
+	            reverse(s, start, i - 1);
+	            start = i + 1;
+	        }
+	    }
+	    // 3, reverse the last word, if there is only one word this will solve the corner case
+	    reverse(s, start, s.length - 1);
 	}
-	private void reverse(char[] c, int s, int e){
-		while(s < e){
-			char temp = c[s];
-			c[s] = c[e];
-			c[e] = temp;
-			s++;
-			e++;
-		}
+
+	public void reverse(char[] s, int start, int end) {
+	    while (start < end) {
+	        char temp = s[start];
+	        s[start] = s[end];
+	        s[end] = temp;
+	        start++;
+	        end--;
+	    }
 	}
 }
