@@ -1,6 +1,4 @@
-package org.leecode.Test;
-
-import org.leecode.TreeNode;
+package org.leecode;
 
 public class Flatten_Binary_Tree_to_Linked_List {
 	//from jiu zhang
