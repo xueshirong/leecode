@@ -6,6 +6,8 @@ public class aa_test {
 	public static void main(String[] args){
 		int res = Add(1, 3);
 	    System.out.print(res);
+	   
+	   // (a ^ b).toString(2).replace(“0", "").length();
 	    
 	}
 	 
@@ -32,7 +34,7 @@ public class aa_test {
         for (int i = 0; i < nums.length; i ++){
             if (ht.containsValue(target - nums[i])){
                 res[0] = i;
-                res[1] = ht.getKey(target - nums[i]);
+                //res[1] = ht.getKey(target - nums[i]);
             }
             ht.put(i, nums[i]);
         }
