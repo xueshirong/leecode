@@ -23,8 +23,8 @@ public class Serialize_and_Deserialize_Binary_Tree {
     public TreeNode deserialize(String data) {
         TreeNode root = null;
         s = data;
-        helper1(root);
-        return root;
+        return helper1(root);
+        //return root;
     }
     private TreeNode helper1(TreeNode root){
         if (s.equals(""))
