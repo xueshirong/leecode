@@ -1,9 +1,7 @@
 package org.leecode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 
 public class Minimum_Number_of_Arrows_to_Burst_Balloons {
 	//排序后，比如第1个气球能向右延伸到第2个气球；那么下一个循环从第3个气球开始。
