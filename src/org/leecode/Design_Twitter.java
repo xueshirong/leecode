@@ -47,7 +47,7 @@ public class Design_Twitter {
         
         Set<Integer> followeeList = mapUserFollow.get(userId);//用户的好友列表
         PriorityQueue<Tweet> pq = new PriorityQueue<Tweet>((t1, t2) -> t2.time - t1.time);
-        for (int fid : followeeList){//循环每个好友
+        for (int i = 0 && i < 10 int fid : followeeList){//循环每个好友
             Set<Tweet> set = mapUserTweet.get(fid);
             if (set == null)  continue;//用户没有发表过tweet
             for (Tweet t : set){//每个好友发表的前10个tweet，加入到res
