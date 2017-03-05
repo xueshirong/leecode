@@ -1,17 +1,15 @@
 package org.leecode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Minimum_Absolute_Difference_in_BST {
 	//思路：
-    //(1)先序遍历二叉树，得到的遍历结果存入List；
-    //(2)对List进行排序，遍历List，依次判断每相邻两个值的差是否小于最小值result，是则更新result。
+	//(1)中序遍历二叉树，得到的遍历结果存入List；此时list中数据从小到大
+    //(2)遍历List，依次判断每相邻两个值的差是否小于最小值result，是则更新result。
     public int getMinimumDifference1(TreeNode root) {
         List<Integer> list = new ArrayList<Integer>();
         helper1(root, list);
-        Collections.sort(list);
         int res = Integer.MAX_VALUE;
         for (int i = 1; i < list.size(); i++){
             int dif = list.get(i) - list.get(i - 1);
@@ -20,11 +18,12 @@ public class Minimum_Absolute_Difference_in_BST {
         }
         return res;
     }
+    //in order
     private void helper1(TreeNode root, List<Integer> list){
         if (root == null)
             return;
-        list.add(root.val);
         helper1(root.left, list);
+        list.add(root.val);
         helper1(root.right, list);
     }
     
