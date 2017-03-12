@@ -71,7 +71,7 @@ public class Combination_Sum {
             if (nums[i] > target)
                 break;
             path.add(nums[i]);
-            helper(nums, i, target - nums[i], path, res);
+            helper(nums, i, target - nums[i], path, res);//每个ele允许重复使用，因此传入i,而不是i+1
             path.remove(path.size() - 1);
         }
     }
