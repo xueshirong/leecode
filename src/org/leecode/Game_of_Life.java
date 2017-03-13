@@ -1,5 +1,5 @@
 package org.leecode;
-
+//https://segmentfault.com/a/1190000003819277
 public class Game_of_Life {
 	//use extra array to save old data
     public void gameOfLife1(int[][] board) {
