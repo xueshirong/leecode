@@ -7,7 +7,7 @@ public class Divide_Two_IntegersTest {
 	Divide_Two_Integers p = new Divide_Two_Integers();
 	@Test
 	public void testDivide() {
-		p.divide2(100, 9);
+		p.divide(Integer.MIN_VALUE, -1);
 	}
 
 }
