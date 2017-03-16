@@ -7,7 +7,7 @@ public class Add_StringsTest {
 	Add_Strings p = new Add_Strings();
 	@Test
 	public void testAddStrings() {
-		p.addStrings("9", "99");
+		p.addStrings("12.1", "34.1");
 	}
 
 }

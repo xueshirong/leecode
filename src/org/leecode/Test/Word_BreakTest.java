@@ -11,8 +11,9 @@ public class Word_BreakTest {
 	@Test
 	public void testWordBreak() {
 		Set<String> dict = new HashSet<String>();
-		dict.add("cc");
-		dict.add("ac");
-		p.wordBreak("ccaccc", dict);
+		dict.add("what");
+		dict.add("so");
+		dict.add("ever");
+		p.wordBreak("whatsoever", dict);
 	}
 }

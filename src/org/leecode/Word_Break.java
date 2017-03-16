@@ -20,14 +20,24 @@ public class Word_Break {
         path[0] =  true;
         
         //function
-        for(int i=1; i <= s.length(); i++){
+        /*for(int i=1; i <= s.length(); i++){
             for(int j=0; j <= max && j <= i; j++){//j is from end to start
                 if(path[i - j] && dict.contains(s.substring(i-j, i))){
                     path[i] = true;
                     break;
                 }
             }
+        }*/
+        
+        for(int i=1; i <= s.length(); i++){
+            for(int j=0; j < i; j++){
+                if(path[j] && dict.contains(s.substring(j, i))){
+                	path[i] = true;
+                    break;
+                }
+            }
         }
+        
         return path[path.length - 1];
     }
     //get the max length of word in dict
