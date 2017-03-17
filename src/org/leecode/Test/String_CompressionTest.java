@@ -7,7 +7,7 @@ public class String_CompressionTest {
 	String_Compression p = new String_Compression();
 	@Test
 	public void testCompress() {
-		p.compress("aabbcc");
+		p.compress("abcaaabbb");
 	}
 
 }
