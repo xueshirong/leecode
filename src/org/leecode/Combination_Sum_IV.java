@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Combination_Sum_IV {
+public class Combination_Sum_IV { 
 	//dfs recursive will time out
     public int combinationSum41(int[] nums, int target) {
         if (nums == null || nums.length == 0)
