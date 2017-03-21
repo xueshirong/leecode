@@ -10,7 +10,7 @@ public class N_Queens {
      * @return: All distinct solutions
      * For example, A string '...Q' shows a queen on forth position
      */
-    ArrayList<ArrayList<String>> solveNQueens(int n) {
+    public ArrayList<ArrayList<String>> solveNQueens(int n) {
         ArrayList<ArrayList<String>> res = new ArrayList<>();
         //corner case
         if (n <= 0)
