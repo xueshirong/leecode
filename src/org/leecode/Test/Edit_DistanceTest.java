@@ -7,7 +7,7 @@ public class Edit_DistanceTest {
 	Edit_Distance p = new Edit_Distance();
 	@Test
 	public void testMinDistance() {
-		p.minDistance2("mart", "karma");
+		p.minDistance1("a", "b");
 	}
 
 }
