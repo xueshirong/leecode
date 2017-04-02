@@ -7,7 +7,7 @@ public class Single_Number_IIITest {
 	Single_Number_III p = new Single_Number_III();
 	@Test
 	public void testSingleNumberIII() {
-		p.singleNumberIII(new int[]{1, 2, 1, 3, 2, 5});
+		p.singleNumberIII2(new int[]{1, 2, 1, 3, 2, 5});
 	}
 
 }
