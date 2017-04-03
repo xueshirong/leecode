@@ -7,7 +7,8 @@ class ListNode{
     }
 }
 public class String_internal_sort {
-	////input: "F5DE24" "Db!32,1Ca". output: "D2EF35" "CD!12,3ab"
+	//Bloomburg
+	//input: "F5DE24" "Db!32,1Ca". output: "D2EF35" "CD!12,3ab"
 	//大致上就是input String 然後return String, 原本是數字的位置放數字, 原本是字母的位置放字母, 原本是其他符號的位置放其他符號
 	//但數字和字母必須是sort過 由小到大放 其他符號則不用
 	public static void main(String[] args){
