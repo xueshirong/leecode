@@ -12,7 +12,7 @@ public class Best_Time_to_Buy_and_Sell_StockTest {
 
 	@Test
 	public void testMaxProfit() {
-		int[] prices = new int[]{2,4,7,1,3,5};
+		int[] prices = new int[]{0, 6, -3, 7};
 		bt.maxProfit(prices);
 	}
 

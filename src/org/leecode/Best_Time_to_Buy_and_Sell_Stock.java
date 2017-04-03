@@ -2,18 +2,12 @@ package org.leecode;
 
 public class Best_Time_to_Buy_and_Sell_Stock {
 	public int maxProfit(int[] prices) {
-		if (prices.length == 0) return 0;
-		
-        int min = prices[0];
-        int profit = 0;
-        for (int i = 1; i < prices.length; i++){
-            if (prices[i] < min){
-            	min = prices[i];
-            }else if ((prices[i] - min) > profit){
-            	profit = prices[i] - min;
-            }
+		int maxCur = 0, maxSoFar = 0;
+        for(int i = 1; i < prices.length; i++) {
+            maxCur = Math.max(0, maxCur += prices[i] - prices[i-1]);
+            maxSoFar = Math.max(maxCur, maxSoFar);
         }
-        return profit;
+        return maxSoFar;
     }
 	//From Jiu Zhang
 	//思路：始终记录最低价min。每次循环里，都与min比较，并计算profit
