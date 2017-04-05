@@ -29,7 +29,7 @@ public class Kth_Largest_Element_in_an_Array {
         //corner case
         if (nums == null || nums.length == 0 || k < 0)
             return 0;
-        return helper(nums, 0, nums.length - 1, k - 1);
+        return helper(nums, 0, nums.length - 1, k);
     }
     private int helper(int[] arr, int left, int right, int k){
         int pivot = arr[(left + right) / 2];
