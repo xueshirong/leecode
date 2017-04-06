@@ -21,4 +21,23 @@ public class Best_Time_to_Buy_and_Sell_Stock_II {
         }
         return max;
     }
+	//Actually, the straight-forward way of finding next local minimum and next local maximum is not much more complicated, 
+	//so, just for the sake of having an alternative I share the code in Java for such case.
+	public int maxProfit1(int[] prices) {
+		int max = 0, i = 0;
+		while(i < prices.length){
+			//find next local minimum
+			while(i < prices.length - 1 && prices[i + 1] <= prices[i])
+				i++;
+			int min = prices[i++];
+			//find next local maximum
+			while(i < prices.length - 1 && prices[i + 1] >= prices[i])
+				i++;
+			if (i < prices.length)
+				max += prices[i++] - min;
+			else
+				max += 0;
+		}
+		return max;
+	}
 }
