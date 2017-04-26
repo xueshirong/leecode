@@ -25,7 +25,7 @@ public class First_Missing_Positive {
             else
                 i++;
         }
-        return nums.length + 1;
+        return nums.length + 1; 
     }
     //1 排序之后查找  O(n), extra space
     //2 把出现的数值放到与下标一致的位置，再判断什么位置最先出现不连续的数值，就是答案了。O(n), extra space
