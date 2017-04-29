@@ -1,23 +1,26 @@
 package org.leecode;
 
-import java.util.Arrays;
-
 public class Valid_Anagram {
-	public boolean isAnagram(String s, String t) {
-		if (s.length() != t.length())
+	//计数s中每个字母出现的次数到 数组[256] 中，然后将t中的字母次数从数组中减去。如果最后数组中全为0， 则true
+    public boolean isAnagram(String s, String t) {
+        int[] res = new int[256];
+        for (int i = 0; i < s.length(); i++){
+            res[s.charAt(i) - 'a'] = res[s.charAt(i) - 'a'] + 1;
+        }
+        for (int i = 0; i < t.length(); i++){
+            res[t.charAt(i) - 'a'] = res[t.charAt(i) - 'a'] - 1;
+        }
+        for (int i : res){
+            if (i != 0)
+                return false;
+        }
+        return true;
+    }
+	
+    //将s,t放入StringBuilder，逐一循环S到t中找对应index
+    public boolean isAnagram1(String s, String t) {
+        if (s.length() != t.length())
             return false;
-		
-//		char[] ss = s.toCharArray();
-//		char[] tt = s.toCharArray();
-//		
-//		Arrays.sort(ss);
-//		Arrays.sort(tt);
-//		
-//		s = new String(ss);
-//		t = new String(tt);
-//		
-//		s.equals(t);
-		
 		StringBuilder sb = new StringBuilder();
 		sb.append(s);
 		StringBuilder tb = new StringBuilder();
