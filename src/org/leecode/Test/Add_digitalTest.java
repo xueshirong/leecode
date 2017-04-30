@@ -1,9 +1,10 @@
-package org.leecode;
+package org.leecode.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.leecode.Add_digital;
 
 public class Add_digitalTest {
 	Add_digital ad = new Add_digital();
