@@ -106,4 +106,78 @@ public class Add_Two_Numbers_II {
         }
         return dummy.next;
     }
+
+    public ListNode addTwoNumbers3(ListNode l1, ListNode l2) {
+        Stack<Integer> s1 = new Stack<Integer>();
+        Stack<Integer> s2 = new Stack<Integer>();
+        while (l1 != null){
+            s1.push(l1.val);
+            l1 = l1.next;
+        }
+        while (l2 != null){
+            s2.push(l2.val);
+            l2 = l2.next;
+        }
+        
+        int sum = 0;
+        ListNode dummy = new ListNode(-1);
+        while(!s1.isEmpty() || !s2.isEmpty()){
+            if (!s1.isEmpty()) sum += s1.pop();
+            if (!s2.isEmpty()) sum += s2.pop();
+            
+            sum = sum / 10;
+            ListNode node = new ListNode(sum % 10);
+            node.next = dummy.next;
+            dummy.next = node;
+        }
+        if (sum == 1){
+            ListNode node = new ListNode(1);
+            node.next = dummy.next;
+            dummy.next = node;
+        }
+        return dummy.next;
+        
+    }
+
+    public ListNode addTwoNumbers4(ListNode l1, ListNode l2) {
+        ListNode l11 = reverse(l1);
+        ListNode l22 = reverse(l2);
+        ListNode l33 = add(l11, l22);
+        ListNode l3 = reverse(l33);
+        return l3;
+    }
+    
+    private ListNode add4(ListNode l1, ListNode l2){
+        ListNode dummy = new ListNode(-1);
+        ListNode head = dummy;
+        int sum = 0;
+        while (l1 != null || l2 != null){
+            if (l1 != null){
+                sum += l1.val;
+                l1 = l1.next;
+            } 
+            if (l2 != null){
+                sum += l2.val;
+                l2 = l2.next;
+            }
+            head.next = new ListNode(sum % 10);
+            head = head.next;
+            sum = sum / 10;
+        }
+        if (sum == 1)
+            head.next = new ListNode(1);
+        return dummy.next;
+    }
+    
+    private ListNode reverse(ListNode head){
+        ListNode pre = new ListNode(-1);
+        while (head != null){
+            ListNode temp = head.next;
+            head.next = pre;
+            pre = head;
+            head = temp;
+        }
+        return pre;
+    }
+
 }

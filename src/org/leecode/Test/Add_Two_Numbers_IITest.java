@@ -22,7 +22,7 @@ public class Add_Two_Numbers_IITest {
 		ListNode l21 = new ListNode(4);
 		l2.next = l20;
 		l20.next = l21;
-		p.addTwoNumbers2(l1, l2);
+		p.addTwoNumbers4(l1, l2);
 	}
 
 }

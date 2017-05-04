@@ -20,6 +20,7 @@ public class Encode_and_Decode_StringsTest {
 		List<String> s = new ArrayList<String>();
 		s.add("");
 		p.decode(p.encode(s));
+		int a = "aaa/es".lastIndexOf("/");
 	}
 
 }
