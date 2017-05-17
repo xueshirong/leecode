@@ -12,7 +12,7 @@ public class Add_BinaryTest {
 
 	@Test
 	public void testAddBinary() {
-		p.addBinary4("1010", "1011");
+		p.addBinary("11", "1");
 	}
 
 }

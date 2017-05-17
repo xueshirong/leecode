@@ -3,7 +3,25 @@ package org.leecode;
 import java.util.Arrays;
 
 public class Add_Binary {
-	public String addBinary(String a, String b) {//this is not a good solution, need to improve
+	public String addBinary(String a, String b) {
+        int alen = a.length() - 1, blen = b.length() - 1, carry = 0;
+        StringBuilder sb = new StringBuilder();
+        while (alen > -1 || blen > -1 || carry != 0){
+            if (alen > -1){
+                carry += a.charAt(alen) - '0';
+                alen--;
+            }
+            if (blen > -1){
+                carry += b.charAt(blen) - '0';
+                blen--;
+            }
+            sb.insert(0, carry % 2);
+            carry = carry / 2;
+        }
+        return sb.toString();
+    }
+	
+	public String addBinary1(String a, String b) {//this is not a good solution, need to improve
         int aLen = a.length();
         int bLen = b.length();
         int maxLen = Math.max(aLen, bLen);
