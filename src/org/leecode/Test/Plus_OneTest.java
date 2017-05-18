@@ -8,7 +8,7 @@ public class Plus_OneTest {
 	Plus_One p = new Plus_One();
 	@Test
 	public void testPlusOne1() {
-		int[] digits = new int[]{0};
+		int[] digits = new int[]{1, 0};
 		p.plusOne1(digits);
 	}
 

@@ -22,25 +22,22 @@ public class Plus_One {
 	//lower efficiency
 	public int[] plusOne1(int[] digits) {
         List<Integer> res = new ArrayList<Integer>();
-        int carray = 0;
+        int carry = 0;
         int len = digits.length - 1;
-        while(len > -1){
-            int sum = 0;
-            if (len == digits.length -1){
-                sum = digits[len] + 1;
-            }else{
-                sum = digits[len] + carray;
+        while(len > -1 || carry != 0){
+            if (len == digits.length - 1){
+                carry += digits[len] + 1;
+            }else if (len > -1){
+                carry += digits[len];
             }
-            carray = sum / 10;
-            res.add(0, sum % 10);
+            res.add(0, carry % 10);
+            carry = carry / 10;
             len--;
         }
-        if (carray != 0){
-            res.add(0, carray);
-        }
+        
         int[] ret = new int[res.size()];
         for (int i = 0; i < res.size(); i++){
-        	ret[i] = res.get(i);
+        	ret[i] = (res.get(i));
         }
         return ret;
     }
