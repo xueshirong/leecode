@@ -7,7 +7,7 @@ public class Reverse_IntegerTest {
 	Reverse_Integer p = new Reverse_Integer();
 	@Test
 	public void testReverse() {
-		p.reverse(1534236469);
+		p.reverse(901000);
 	}
 
 }
