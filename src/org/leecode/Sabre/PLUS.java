@@ -21,13 +21,13 @@ public class PLUS {
 	}
 	
 	public static enum Selection{
-		X(true),
+		/*X(true),
 		Y(false),
-		Z(true);
+		Z(true);*/
 		
 		Selection(){
 			
-		}
+		};
 		
 		private boolean correct;
 		
