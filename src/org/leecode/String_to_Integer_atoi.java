@@ -21,7 +21,7 @@ public class String_to_Integer_atoi {
             int c = str.charAt(i) - '0';
             if (c < 0 || c > 9)
                 break;
-            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE && c > 7)){
+            if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE/10 && c > 7)){
                 if (sign == 1)  return Integer.MAX_VALUE;
                 else    return Integer.MIN_VALUE;
             }
