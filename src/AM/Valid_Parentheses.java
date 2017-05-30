@@ -2,6 +2,7 @@ package AM;
 
 import java.util.Stack;
 
+//LC 20
 public class Valid_Parentheses {
 	public static void main(String[] args) {
 		boolean res = isValid("()[,]{}");//false, invalid char
