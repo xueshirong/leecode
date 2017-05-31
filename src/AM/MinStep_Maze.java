@@ -45,7 +45,7 @@ public class MinStep_Maze {
 		int y = node.col;
 		int dis = node.distance;
 		maze[x][y] = 0;
-		if (x - 1 >= 0 && maze[x - 1][y] == 1) 
+		if (x - 1 >= 0 && maze[x - 1][y] == 1)
 			q.add(new Node(x - 1, y, dis + 1));
 		if (x + 1 < rows && maze[x + 1][y] == 1)
 			q.add(new Node(x + 1, y, dis + 1));

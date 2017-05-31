@@ -24,7 +24,7 @@ class Movie {
 public class Movie_Network {
 	public static void main(String[] args){			
 		Movie m = getTestMovie();
-		List<Movie> res = getMovieRecommendations(m, 3);
+		List<Movie> res = getMovieRecommendations(m, 5);
 		for(Movie mm : res)
 			System.out.print(mm.getId() + " ");
 	}
@@ -58,12 +58,15 @@ public class Movie_Network {
 	private static void getMovies(Movie movie, PriorityQueue<Movie> queue, int k) {
         for (Movie m : movie.getSimilarMovies()) {
             if (!queue.contains(m)) {
-            	if (queue.size() < k)
+            	/*if (queue.size() < k)
             		queue.offer(m);
             	else if (queue.peek().getRating() < m.getRating()){//remove the peek movie if the size is k and peek's rating is less than m'rating
             		queue.poll();
             		queue.offer(m);
-            	}            		
+            	} */
+            	queue.offer(m);
+            	if (queue.size() == k + 1)//remove the first move which has the lowest ranking
+            		queue.poll();
             	getMovies(m, queue, k);
             }
         }
