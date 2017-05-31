@@ -29,12 +29,12 @@ public class Common_Manager {
         
         Employee test = new Employee("test");
 
-        System.out.println(closestCommonManager(bill, milton, nina));//peter
-        System.out.println(closestCommonManager(bill, nina, porter));//dom
-        System.out.println(closestCommonManager(bill, nina, samir));//bill
-        System.out.println(closestCommonManager(bill, peter, nina));//peter
-        System.out.println(closestCommonManager(bill, peter, test));//null
-        System.out.println(closestCommonManager(bill, bill, bill));//bill
+        System.out.println(commonManager(bill, milton, nina));//peter
+        System.out.println(commonManager(bill, nina, porter));//dom
+        System.out.println(commonManager(bill, nina, samir));//bill
+        System.out.println(commonManager(bill, peter, nina));//peter
+        System.out.println(commonManager(bill, peter, test));//null
+        System.out.println(commonManager(bill, bill, bill));//bill
     }
 	
 	static Employee closestCommonManager1(Employee root, Employee a, Employee b)
@@ -47,7 +47,7 @@ public class Common_Manager {
 		
 		for(Employee iter : root.reporters)
 		{
-			Employee res = closestCommonManager(iter, a, b);
+			Employee res = closestCommonManager1(iter, a, b);
 			if(res != null)
 			{
 				count++;
@@ -62,37 +62,37 @@ public class Common_Manager {
 	}
 	
 	// ............
-	public static Employee closestCommonManager(Employee ceo, Employee e1, Employee e2) {
+	public static Employee commonManager(Employee ceo, Employee e1, Employee e2) {
         if (ceo == null || e1 == null || e2 == null)//corner case
             return null;
         
         if (!isContain(ceo, e1) || !isContain(ceo, e2))//if e1 or e2 do not belong to the organization
             return null;
         
-        Queue<Employee> workingQueue = new LinkedList<>();
-        workingQueue.offer(ceo);
-        Employee closestKnownManager = null;
-        while (!workingQueue.isEmpty()) {
-            Employee employee = workingQueue.poll();
+        Queue<Employee> q = new LinkedList<>();
+        q.add(ceo);
+        Employee res = null;
+        while (!q.isEmpty()) {
+            Employee employee = q.poll();
             if (isContain(employee, e1) && isContain(employee, e2)) {
-                closestKnownManager = employee;
+            	res = employee;
                 for (Employee em : employee.reporters) {
-                    workingQueue.offer(em);
+                    q.add(em);
                 }
             }
         }
-        return closestKnownManager;
+        return res;
     }
 	
 	//manager is contain the employee or not
 	public static boolean isContain(Employee manager, Employee employee) {
         if (manager == null)
-            return false;
+            return false;        
         if (manager.name == employee.name)
             return true;
+        
         if (manager.reporters == null || manager.reporters.size() == 0)
             return false;
-
         for (Employee e : manager.reporters) {
         	if (isContain(e, employee))
         		return true;
