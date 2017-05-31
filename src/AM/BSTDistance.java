@@ -41,8 +41,7 @@ public class BSTDistance {
 		if (d2 < 0)	return -1;//node2 is not in the BST, return -1;
 		
 		int lcaVal = lowestCommonAncestor(root, node1, node2).val;// find LCA value
-		int dlca = distance(root, lcaVal);// distance between lca node and
-											// root
+		int dlca = distance(root, lcaVal);// distance between lca node and root
 		int distance = (d1 + d2) - 2 * dlca;// distance between node1 and node2
 		return distance;
 	}
