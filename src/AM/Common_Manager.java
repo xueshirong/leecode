@@ -71,6 +71,9 @@ public class Common_Manager {
         while (!q.isEmpty()) {
             Employee employee = q.poll();
             if (isContain(employee, e1) && isContain(employee, e2)) {
+            	if(employee == e1 || employee == e2){
+                    return employee;
+                }
             	res = employee;
                 for (Employee em : employee.reporters) {
                     q.add(em);

@@ -39,7 +39,7 @@ public class Movie_Network {
 	}
 	//get list of movies which are similar to the input movie
 	public static List<Movie> getMovieRecommendations (Movie movie, int numSimilar){
-		//PriorityQueue with desendant order
+		//PriorityQueue with rating value
 		PriorityQueue<Movie> q = new PriorityQueue<>(new Comparator<Movie>() {
 			public int compare(Movie m1, Movie m2) {
 				return (int)(m1.getRating() - m2.getRating());
