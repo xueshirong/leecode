@@ -35,9 +35,9 @@ public class BSTDistance {
 
 		buildBST(values, n);//generate BST
 		
-		int d1 = distancehHelp(root, node1);// distance between node1 and root
+		int d1 = distance(root, node1);// distance between node1 and root
 		if (d1 < 0)	return -1;//node1 is not in the BST, return -1;
-		int d2 = distancehHelp(root, node2);// distance between node2 and root
+		int d2 = distance(root, node2);// distance between node2 and root
 		if (d2 < 0)	return -1;//node2 is not in the BST, return -1;
 		
 		int lcaVal = lowestCommonAncestor(root, node1, node2).val;// find LCA value
