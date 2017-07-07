@@ -24,7 +24,7 @@ class Movie {
 public class Movie_Network {
 	public static void main(String[] args){			
 		Movie m = getTestMovie();
-		List<Movie> res = getMovieRecommendations(m, 5);
+		List<Movie> res = getMovieRecommendations(m, 2);
 		for(Movie mm : res)
 			System.out.print(mm.getId() + " ");
 	}

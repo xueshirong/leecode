@@ -10,9 +10,12 @@ import java.util.Set;
 public class Number_of_Connected_Components_in_an_Undirected_Graph {
 	public static void main(String[] args) {
 		int res = 0;
-		res = countComponents(5, new int[][]{{0,1},{1,2},{3,4}});
+		res = countComponents(6, new int[][]{{0,1},{0,5},{1,2},{3,4}});
 		//System.out.println(res);
 		res = countComponents(5, new int[][]{{0,1},{1,2},{2,3},{3,4}});
+		//System.out.println(res);
+		
+		//res = countComponents(4, new int[][]{{0},{1},{2},{3},{4}});
 		//System.out.println(res);
 	}
 	public static int countComponents(int n, int[][] edges) {
@@ -45,7 +48,7 @@ public class Number_of_Connected_Components_in_an_Undirected_Graph {
                 res++;
                 //----
                 if (tmp.size() > list.size())
-                	list = tmp;
+                	list = new ArrayList(tmp);
             }
         }
         System.out.println(list);
