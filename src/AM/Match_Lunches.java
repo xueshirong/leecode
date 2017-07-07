@@ -13,7 +13,7 @@ class MemLuch{
 public class Match_Lunches {
 	
 	public static void main(String[] args) {
-		String[][] lunchMenuPairs = new String[][]{{"Pizza", "Italian"},{"Curry", "Indian"},{"Masala", "Indian"}};
+		String[][] lunchMenuPairs = new String[][]{{"Pizza", "Italian"},{"Pizza", "Italian"},{"Curry", "Indian"},{"Masala", "Indian"},{"Noodle", "China"}};
 		String[][] teamCuisinePreference = new String[][]{{"Jose", "Italian"},{"John", "Indian"},{"Sarah", "Thai"}, {"May","*"}};
 		String[][] res = matchLunches(lunchMenuPairs, teamCuisinePreference);
 		printRes(res);
@@ -25,14 +25,12 @@ public class Match_Lunches {
 		
 	}
 	
-	
 	private static void printRes(String[][] res) {
 		for (String[] personLunch : res){
 			System.out.println(personLunch[0] + "->" + personLunch[1]);
 		}
 		System.out.println("------------");
 	}
-
 
 	public static String[][] matchLunches(String[][] lunchMenuPairs, String[][] teamCuisinePreference){
 		//corner case
