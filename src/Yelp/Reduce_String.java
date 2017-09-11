@@ -1,8 +1,6 @@
 package Yelp;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * Given a string of characters change all occurrences of
@@ -16,7 +14,7 @@ public class Reduce_String {
 	public static void main(String[] args) throws IOException{
 		//asdheeeeskaeeeleee - asdheskaele
 		
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		//BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		//String input = br.readLine();
 		String input = "asdheeeeskaeeeleee";
 		System.out.println(reduceString(input));
