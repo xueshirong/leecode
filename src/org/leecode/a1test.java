@@ -1,13 +1,16 @@
 package org.leecode;
 
+import java.util.Arrays;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class a1test {
 	public static void main(String[] args){
-        int[] res = find(new int[]{3, 9, 11, 1,2});
+        /*int[] res = find(new int[]{3, 9, 11, 1,2});         
         for (int i : res)
-            System.out.print(i + " ");
+            System.out.print(i + " ");*/
     }
+	
 	//数组， 输出是右边第一个比他大的数字
     private static int[] find(int[] nums){
         //corncer case
