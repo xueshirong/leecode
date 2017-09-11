@@ -32,7 +32,7 @@ public class Anagram_Checker {
 	            map.get(t).add(i);
 	        }
 	    }
-	    for(int l: map.values()){
+	    for(ArrayList<Integer> l: map.values()){
 	        result = new ArrayList<String>();
 	        if(l.size() >= 1){
 	            for(Integer i: l){
