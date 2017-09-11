@@ -17,7 +17,10 @@ public class Reduce_String {
 		//asdheeeeskaeeeleee - asdheskaele
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println(reduceString(br.readLine()));
+		//String input = br.readLine();
+		String input = "asdheeeeskaeeeleee";
+		System.out.println(reduceString(input));
+		System.out.println(reduceString2(input));
 	}
 
 	public static String reduceString(String inputString) {
@@ -28,5 +31,23 @@ public class Reduce_String {
 			sb.append(inputString.charAt(i));
 		}
 		return sb.toString();
+	}
+	
+	public static String reduceString2(String input){
+		char[] array = input.toCharArray();
+		int slow = 0;
+		int fast = 0;
+		while (fast < array.length) {
+			if (slow > 0 && array[slow - 1] == array[fast]) {
+				while (fast < array.length && array[fast] == array[slow - 1]) {
+					fast++;
+				}
+			} else {
+				array[slow] = array[fast];
+				slow++;
+				fast++;
+			}
+		}
+		return new String(array, 0, slow);
 	}
 }
