@@ -33,5 +33,30 @@ public class String_Compression {
 		}
 		return new String(result);
 	}
+	
+	public static String compress2(String str){
+        if (str == null || str.equals(""))
+            return str;
+        char pre = str.charAt(0);
+        int count = 1;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 1; i < str.length(); i++){
+            if (str.charAt(i) != str.charAt(i - 1)){
+                sb.append(str.charAt(i - 1));
+                sb.append(count);
+                count = 1;
+                pre = str.charAt(i);
+            }else{
+                count++;
+                continue;
+            }
+        }
+        sb.append(pre);
+        sb.append(count);
+        
+        if (sb.toString().length() >= str.length())
+            return str;
+        return sb.toString();
+    }
 
 }
