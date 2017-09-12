@@ -29,7 +29,7 @@ import java.util.Map;
  * @author Xue
  *
  */
-public class Top_Color1 {
+public class Top_Color {
 
 	public static void main(String[] args) {
 //		Scanner in = new Scanner(System.in);
