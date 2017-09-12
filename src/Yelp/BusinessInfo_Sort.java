@@ -15,7 +15,7 @@ class BusinessInfo {
     }
 }
 
-public class BusinessInfo_Median {
+public class BusinessInfo_Sort {
 	/**
      * List of bussinesses info where each element is a dictionary containing
      * id and rating. Sort the businesses by their rating in decreasing order.
