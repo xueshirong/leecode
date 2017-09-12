@@ -1,4 +1,4 @@
-package Yelp;
+package Yelp.OA;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,17 +38,49 @@ public class Top_Color {
 		List<String> color2 = new ArrayList<>();
 		List<String> color3 = new ArrayList<>();
 		color1.add("red");
-		color1.add("black");
 		color1.add("green");
-		color2.add("white");
-		color2.add("red");
+		color1.add("green");
 		color2.add("black");
-		color3.add("black");
+		color2.add("blue");
+		color2.add("black");
 		color3.add("red");
+		color3.add("yellow");
+		color3.add("yellow");
 		colors.add(color1);
 		colors.add(color2);
 		colors.add(color3);
-		System.out.println(topColor(colors));
+		System.out.println(topColor1(colors));
+	}
+	
+	private static List<String> topColor1(List<List<String>> colors){
+		List<String> result = new ArrayList<>();
+		Map<String, Integer> map = new HashMap<>();
+		int max = 0;
+		for(int i = 0; i < colors.size(); i ++){
+			List<String> color = colors.get(i);
+			for(int j = 0; j < color.size(); j ++){
+				String cur = color.get(j);
+				if (map.containsKey(cur)){
+					map.put(cur, map.get(cur) + 1);
+					max = Math.max(max, map.get(cur));
+				}else{
+					map.put(cur, 1);
+					max = Math.max(max, 1);
+				}
+			}
+		}
+		for(Map.Entry<String, Integer> entry : map.entrySet()){
+			if(entry.getValue() == max){
+				result.add(entry.getKey());
+			}
+		}
+		Collections.sort(result, new Comparator<String>(){
+			@Override
+			public int compare(String a, String b){
+				return a.compareTo(b);
+			}
+		});
+		return result;
 	}
 	
 	private static List<String> topColor(List<List<String>> colors){

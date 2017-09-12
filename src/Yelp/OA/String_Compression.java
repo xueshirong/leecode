@@ -1,4 +1,4 @@
-package Yelp;
+package Yelp.OA;
 
 public class String_Compression {
 
@@ -54,8 +54,8 @@ public class String_Compression {
         sb.append(pre);
         sb.append(count);
         
-        if (sb.toString().length() >= str.length())
-            return str;
+        /*if (sb.toString().length() >= str.length())
+            return str;*/
         return sb.toString();
     }
 
