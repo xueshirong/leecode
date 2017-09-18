@@ -13,7 +13,10 @@ public class Merge_Intervals {
 	      int start;
 	      int end;
 	      Interval() { start = 0; end = 0; }
-	      Interval(int s, int e) { start = s; end = e; }
+	      public Interval(int s, int e) 
+	      { 
+	    	  start = s; end = e; 
+	      }
 	 }
 	 
 	//思路：题意很明确，首先对各区间按开始来排序，最后遍历，如果前面和后面的区间有重合，合并。
