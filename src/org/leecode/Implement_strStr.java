@@ -1,6 +1,12 @@
 package org.leecode;
 
 public class Implement_strStr {
+	public static void main(String[] args){
+		String source = "source";
+		String target = "rced";
+		int res = strStr3(source, target);
+		System.out.println(res);
+	}
     /**
      * Returns a index to the first occurrence of needle in haystack,
      * or -1  if needle is not part of haystack.
@@ -64,18 +70,18 @@ public class Implement_strStr {
         return -1;
     }
 	//From Jiu Zhang
-	public int strStr3(String haystack, String needle) {
+	public static int strStr3(String haystack, String needle) {
         if (needle.length() > haystack.length())
             return -1;
         if (haystack.equals(needle))
             return 0;
-        for(int i = 0; i < haystack.length() - needle.length() + 1; i++){
+        for(int i = 0; i < haystack.length() - needle.length() + 1; i++){//key1: haystack.length() - needle.length() + 1
             int k = 0;
             for (k = 0; k < needle.length(); k++){
                 if (needle.charAt(k) != haystack.charAt(i + k))
                     break;
             }
-            if (k == needle.length())
+            if (k == needle.length())//key2: not target.length() - 1, because j++ is not match the for loop continue
                 return i;
         }
         return -1;
