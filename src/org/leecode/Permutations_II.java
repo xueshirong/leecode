@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Permutations_II {
+	public static void main(String[] args){
+		permuteUnique3(new int[]{1,1,2});
+	}
 	//From Jiu Zhang
 	public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
@@ -44,7 +47,7 @@ public class Permutations_II {
         }
     }
     //..............
-    public List<List<Integer>> permuteUnique1(int[] nums) {
+    public static List<List<Integer>> permuteUnique1(int[] nums) {
         List<List<Integer>> res = new ArrayList<List<Integer>>();
         //corner case
         if (nums == null || nums.length == 0)
@@ -55,7 +58,7 @@ public class Permutations_II {
         helper1(nums, path, vis, res);
         return res;
     }
-    private void helper1(int[] nums, List<Integer> path, boolean[] vis, List<List<Integer>> res){
+    private static void helper1(int[] nums, List<Integer> path, boolean[] vis, List<List<Integer>> res){
         if (path.size() == nums.length){
             res.add(new ArrayList<Integer>(path));
             return;
@@ -103,5 +106,45 @@ public class Permutations_II {
             visited[i] = false;
         }
         
+    }
+
+    //-------------------
+    public static List<List<Integer>> permuteUnique3(int[] nums){
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        //corner case
+        if (nums == null)
+            return res;
+        if (nums.length == 0){
+            res.add(new ArrayList<Integer>());
+            return res;
+        }
+        Arrays.sort(nums);// key point to sort the array first
+        List<Integer> path = new ArrayList<Integer>();
+        boolean[] visited = new boolean[nums.length];
+        for (int i = 0; i < nums.length; i++)
+            visited[i] = false;
+        helper3(nums, path, res, visited);
+        return res;
+    }
+    private static void helper3(int[] nums, 
+                        List<Integer> path, 
+                        List<List<Integer>> res, 
+                        boolean[] visited){
+        if (path.size() == nums.length){
+            res.add(new ArrayList<Integer>(path));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++){
+            if (visited[i])
+                continue;
+            else if (i != 0 && nums[i] == nums[i - 1] && !visited[i - 1])
+                continue;
+            
+            visited[i] = true;
+            path.add(nums[i]);
+            helper3(nums, path, res, visited);
+            path.remove(path.size() - 1);
+            visited[i] = false;
+        }
     }
 }

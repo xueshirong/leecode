@@ -1,12 +1,16 @@
 package org.leecode;
 
 public class Closest_Number_in_Sorted_Array {
+	public static void main(String args[]){
+		closestNumber(new int[]{1,4,6,10,20}, 21);
+	}
+	
 	/**
      * @param A an integer array sorted in ascending order
      * @param target an integer
      * @return an integer
      */
-    public int closestNumber(int[] A, int target) {
+    public static int closestNumber(int[] A, int target) {
         // Write your code here
         if (A == null || A.length == 0)
             return -1;
